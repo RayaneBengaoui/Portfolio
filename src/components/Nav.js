@@ -16,7 +16,7 @@ const Nav = ({ open }) => {
         <h3>Homepage</h3>
         <SectionLine bg_color="#F3B659" />
       </Section>
-      <Section bg_color="#88B3C4">
+      <Section className="middle-section" bg_color="#88B3C4">
         <Cover />
         <SectionImage src={sunLightImg} alt="sun light" />
         <h3 className="dark-title">About me</h3>
@@ -46,12 +46,16 @@ const NavStyled = styled.div`
   flex-direction: column;
   padding-left: 0.5rem;
   padding-right: 0.5rem;
+
+  .middle-section {
+    margin: 0.5rem 0rem;
+  }
 `;
 
 const Section = styled.div`
   width: 100%;
   height: 33%;
-  margin-bottom: 0.5rem;
+  /* margin-bottom: 0.5rem; */
   background: ${(props) => props.bg_color};
   display: flex;
   flex-direction: column;

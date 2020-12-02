@@ -2,6 +2,9 @@ import Homepage from "./Pages/Homepage";
 import Work from "./Pages/Work";
 import styled from "styled-components";
 
+// React
+import { useState } from "react";
+
 //Router
 import { Switch, Route, useLocation } from "react-router-dom";
 
@@ -13,13 +16,15 @@ import { AnimatePresence } from "framer-motion";
 
 function App() {
   const location = useLocation();
+  const [navStatus, setNavStatus] = useState(false);
   return (
     <AppStyled>
       <GlobalStyle />
+
       <AnimatePresence exitBeforeEnter>
         <Switch location={location} key={location.pathname}>
           <Route path="/" exact>
-            <Homepage />
+            <Homepage navStatus={navStatus} setNavStatus={setNavStatus} />
           </Route>
           <Route path="/work">
             <Work />

@@ -18,7 +18,11 @@ import {
   fadeAnim,
 } from "../animation";
 
-const Homepage = () => {
+//Components
+import Nav from "../components/Nav";
+import Hamburger from "../components/Hamburger";
+
+const Homepage = ({ navStatus, setNavStatus }) => {
   return (
     <HomepageStyled
       variants={homepageAnim}
@@ -26,12 +30,14 @@ const Homepage = () => {
       animate="show"
       exit="exit"
     >
+      <Nav open={navStatus ? "translateX(0%)" : "translateX(-100%)"} />
+      <Hamburger navStatus={navStatus} setNavStatus={setNavStatus} />
       <MoutainBg variants={imgAnim} src={moutainImg} alt="" />
       <Layout>
         <CircleFront variants={sunFrontAnim} />
         <CircleBack variants={sunBackAnim} />
 
-        <Container>
+        <Container navOpen={navStatus ? "20rem" : "0rem"}>
           <Hide>
             <Title variants={titleAnim}>
               Rayane <span>Bengaoui</span>
@@ -87,6 +93,8 @@ const Container = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
+  transition: all 0.5s ease;
+  margin-left: ${(props) => props.navOpen};
 `;
 
 const ButtonStyled = styled(motion.button)`

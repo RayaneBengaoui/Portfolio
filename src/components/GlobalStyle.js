@@ -24,6 +24,11 @@ h2{
     color : white;
 }
 
+h3{
+    font-size : 2.5rem;
+    color : white;
+}
+
 
 
 button{

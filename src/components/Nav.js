@@ -10,20 +10,24 @@ import moonImg from "../images/moon.png";
 const Nav = ({ open }) => {
   return (
     <NavStyled open={open}>
-      <Section bg_color="#085567">
-        <Cover />
+      <Section bg_color="#085567" rotate="rotateZ(40deg)">
+        <Cover className="cover" />
         <SectionImage src={sunImg} alt="sun" />
         <h3>Homepage</h3>
         <SectionLine bg_color="#F3B659" />
       </Section>
-      <Section className="middle-section" bg_color="#88B3C4">
-        <Cover />
+      <Section
+        className="middle-section"
+        bg_color="#80a4b3"
+        rotate="rotateZ(-40deg)"
+      >
+        <Cover className="cover" />
         <SectionImage src={sunLightImg} alt="sun light" />
-        <h3 className="dark-title">About me</h3>
+        <h3>About me</h3>
         <SectionLine bg_color="#D9D2C3" />
       </Section>
-      <Section bg_color="#061223">
-        <Cover />
+      <Section bg_color="#061223" rotate="rotateZ(20deg)">
+        <Cover className="cover" />
         <SectionImage src={moonImg} alt="moon" />
         <h3>My work</h3>
         <SectionLine bg_color="#DAE7EA" />
@@ -62,9 +66,20 @@ const Section = styled.div`
   align-items: center;
   justify-content: space-evenly;
   position: relative;
+  cursor: pointer;
 
   .dark-title {
     color: black;
+  }
+
+  &:hover {
+    img {
+      transform: ${(props) => props.rotate};
+      width: 50%;
+    }
+    .cover {
+      opacity: 0.25;
+    }
   }
 `;
 
@@ -74,16 +89,19 @@ const Cover = styled.div`
   opacity: 0;
   background-color: black;
   position: absolute;
+  transition: all 1s ease-out;
 `;
 
 const SectionImage = styled.img`
   width: 60%;
+  transition: all 0.5s ease-out;
 `;
 
 const SectionLine = styled.div`
   width: 50%;
   height: 0.5rem;
   background: ${(props) => props.bg_color};
+  z-index: 100;
 `;
 
 export default Nav;

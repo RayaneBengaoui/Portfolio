@@ -37,7 +37,7 @@ const Homepage = ({ navStatus, setNavStatus }) => {
         <CircleFront variants={sunFrontAnim} />
         <CircleBack variants={sunBackAnim} />
 
-        <Container navOpen={navStatus ? "20rem" : "0rem"}>
+        <Container navOpen={navStatus ? "25rem" : "0rem"}>
           <Hide>
             <Title variants={titleAnim}>
               Rayane <span>Bengaoui</span>
@@ -109,8 +109,6 @@ const CircleFront = styled(motion.div)`
   height: 20rem;
   border-radius: 50%;
   background: #f3b659;
-  /* top: 20%;
-  left: 40%; */
   z-index: -10;
 `;
 
@@ -120,8 +118,6 @@ const CircleBack = styled(motion.div)`
   height: 20rem;
   border-radius: 50%;
   background: #d68d64;
-  /* top: 21%;
-  left: 39.5%; */
   z-index: -11;
 `;
 

@@ -27,6 +27,7 @@ h2{
 h3{
     font-size : 2.5rem;
     color : white;
+    z-index : 100;
 }
 
 

@@ -8,19 +8,38 @@ const GlobalStyle = createGlobalStyle`
 	box-sizing :border-box 
 }
 
-/* body{
-    background:#1b1b1b;
+html{
+    font-family: 'Lato', sans-serif;
+    font-size : 62.5%;
 }
+
+h1{
+   
+  font-size: 9.5rem;
+  color: white;
+}
+
+h2{
+    font-size : 4rem;
+    color : white;
+}
+
+
 
 button{
     font-weight:bold;
-    font-size:1.1rem;
+    font-size:1.5rem;
+    font-family: inherit;
+    padding : 2rem 4rem;
+    border-radius : 200px;
+    border : none;
     cursor : pointer;
+    transition: all 0.5s ease;
     &:hover{
-        background-color : #23d997;
+        background-color : #d68d64;
         color:white;
     }
-} */
+} 
 
 
 `;

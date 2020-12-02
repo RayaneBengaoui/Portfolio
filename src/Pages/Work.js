@@ -1,8 +1,15 @@
+import { homepageAnim } from "../animation";
+import { motion } from "framer-motion";
 const Work = () => {
   return (
-    <div>
+    <motion.div
+      variants={homepageAnim}
+      initial="hidden"
+      animate="show"
+      exit="exit"
+    >
       <h2>Second Page</h2>
-    </div>
+    </motion.div>
   );
 };
 

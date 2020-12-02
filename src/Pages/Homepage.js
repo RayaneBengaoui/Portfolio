@@ -14,6 +14,8 @@ import {
   homepageAnim,
   sunFrontAnim,
   sunBackAnim,
+  imgAnim,
+  fadeAnim,
 } from "../animation";
 
 const Homepage = () => {
@@ -24,7 +26,7 @@ const Homepage = () => {
       animate="show"
       exit="exit"
     >
-      <MoutainBg src={moutainImg} alt="" />
+      <MoutainBg variants={imgAnim} src={moutainImg} alt="" />
       <Layout>
         <CircleFront variants={sunFrontAnim} />
         <CircleBack variants={sunBackAnim} />
@@ -41,7 +43,7 @@ const Homepage = () => {
               Front-end engineer / Web designer
             </motion.h2>
           </Hide>
-          <ButtonStyled>Discover my work</ButtonStyled>
+          <ButtonStyled variants={fadeAnim}>Discover my work</ButtonStyled>
         </Container>
 
         <Link to="/work">Next page</Link>
@@ -68,7 +70,7 @@ const Line = styled(motion.div)`
   margin-bottom: 2rem;
 `;
 
-const MoutainBg = styled.img`
+const MoutainBg = styled(motion.img)`
   position: fixed;
   bottom: -20%;
   z-index: -5;
@@ -87,7 +89,7 @@ const Container = styled.div`
   justify-content: flex-end;
 `;
 
-const ButtonStyled = styled.button`
+const ButtonStyled = styled(motion.button)`
   align-self: flex-start;
   background-color: #f3b659;
   margin-top: 2rem;

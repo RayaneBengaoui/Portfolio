@@ -1,11 +1,10 @@
 export const homepageAnim = {
   hidden: {
-    opacity: 0,
-    y: 300,
+    y: "-100%",
   },
   show: {
-    opacity: 1,
     y: 0,
+
     transition: {
       duration: 0.5,
       when: "beforeChildren",
@@ -16,6 +15,26 @@ export const homepageAnim = {
     y: 50,
     transition: {
       duration: 1,
+    },
+  },
+};
+
+export const fadeAnim = {
+  hidden: { opacity: 0 },
+  show: { opacity: 1, transition: { ease: "easeOut", duration: 0.75 } },
+};
+
+export const imgAnim = {
+  hidden: {
+    bottom: "-120%",
+    opacity: 0,
+  },
+  show: {
+    bottom: "-20%",
+    opacity: 1,
+    transition: {
+      duration: 0.75,
+      ease: "easeOut",
     },
   },
 };
@@ -42,10 +61,11 @@ export const lineAnim = {
 };
 
 export const sunFrontAnim = {
-  hidden: { top: "90%", left: "0%" },
+  hidden: { top: "90%", left: "0%", opacity: 0 },
   show: {
     top: "20%",
     left: "50%",
+    opacity: 1,
     transition: {
       duration: 4,
     },
@@ -59,10 +79,11 @@ export const sunFrontAnim = {
   },
 };
 export const sunBackAnim = {
-  hidden: { top: "90%", left: "0%" },
+  hidden: { top: "90%", left: "0%", opacity: 0 },
   show: {
     top: "20.5%",
     left: "49.5%",
+    opacity: 1,
     transition: {
       duration: 3.9,
     },

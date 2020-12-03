@@ -1,5 +1,3 @@
-//React Router
-import { Link } from "react-router-dom";
 //Styled Components
 import styled from "styled-components";
 //Images
@@ -54,8 +52,6 @@ const Homepage = ({ navStatus, setNavStatus }) => {
           </Hide>
           <ButtonStyled variants={fadeAnim}>Discover my work</ButtonStyled>
         </Container>
-
-        {/* <Link to="/work">Next page</Link> */}
       </Layout>
     </HomepageStyled>
   );

@@ -6,6 +6,7 @@ import moutainNightImg from "../images/night-moutain-bg.png";
 //Components
 import Nav from "../components/Nav";
 import Hamburger from "../components/Hamburger";
+import Slider from "../components/Slider";
 
 const Work = ({ navStatus, setNavStatus }) => {
   return (
@@ -21,6 +22,9 @@ const Work = ({ navStatus, setNavStatus }) => {
       />
       <Hamburger navStatus={navStatus} setNavStatus={setNavStatus} />
       <ImgBg variants={imgWorkAnim} src={moutainNightImg} alt="" />
+      <SliderContainer>
+        <Slider />
+      </SliderContainer>
     </WorkStyled>
   );
 };
@@ -28,20 +32,34 @@ const Work = ({ navStatus, setNavStatus }) => {
 const WorkStyled = styled(motion.div)`
   min-height: 100vh;
   background: linear-gradient(180deg, #082843 0%, #99b0d0 100%);
-  z-index: 5;
+  /* z-index: 5; */
   position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 `;
 
 const ImgBg = styled(motion.img)`
   position: fixed;
   bottom: 20%;
-  z-index: 0;
+  z-index: 5;
   width: 100%;
   pointer-events: none;
 
   @media (max-width: 1440px) {
     width: 125%;
   }
+`;
+
+const SliderContainer = styled.div`
+  min-width: 80rem;
+  height: 36rem;
+  margin: 0rem auto;
+
+  padding: 2rem;
+
+  position: relative;
+  overflow: hidden;
 `;
 
 export default Work;

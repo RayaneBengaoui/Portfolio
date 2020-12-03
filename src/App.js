@@ -27,7 +27,7 @@ function App() {
             <Homepage navStatus={navStatus} setNavStatus={setNavStatus} />
           </Route>
           <Route path="/work">
-            <Work />
+            <Work navStatus={navStatus} setNavStatus={setNavStatus} />
           </Route>
         </Switch>
       </AnimatePresence>

@@ -1,5 +1,5 @@
 //React Router
-// import { Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 //Styled Components
 import styled from "styled-components";
 //Images
@@ -7,10 +7,20 @@ import sunImg from "../images/sun.png";
 import sunLightImg from "../images/sun-light.png";
 import moonImg from "../images/moon.png";
 
-const Nav = ({ open }) => {
+const Nav = ({ open, setNavStatus }) => {
   return (
     <NavStyled open={open}>
       <Section bg_color="#085567" rotate="rotateZ(40deg)">
+        <Link
+          onClick={() => setNavStatus(false)}
+          to="/"
+          style={{
+            position: "absolute",
+            zIndex: "1000",
+            width: "100%",
+            height: "100%",
+          }}
+        ></Link>
         <Cover className="cover" />
         <SectionImage src={sunImg} alt="sun" />
         <h3>Homepage</h3>
@@ -21,12 +31,32 @@ const Nav = ({ open }) => {
         bg_color="#80a4b3"
         rotate="rotateZ(-40deg)"
       >
+        <Link
+          onClick={() => setNavStatus(false)}
+          to="/about"
+          style={{
+            position: "absolute",
+            zIndex: "1000",
+            width: "100%",
+            height: "100%",
+          }}
+        ></Link>
         <Cover className="cover" />
         <SectionImage src={sunLightImg} alt="sun light" />
         <h3>About me</h3>
         <SectionLine bg_color="#D9D2C3" />
       </Section>
       <Section bg_color="#061223" rotate="rotateZ(20deg)">
+        <Link
+          onClick={() => setNavStatus(false)}
+          to="/work"
+          style={{
+            position: "absolute",
+            zIndex: "1000",
+            width: "100%",
+            height: "100%",
+          }}
+        ></Link>
         <Cover className="cover" />
         <SectionImage src={moonImg} alt="moon" />
         <h3>My work</h3>
@@ -50,6 +80,7 @@ const NavStyled = styled.div`
   flex-direction: column;
   padding-left: 0.5rem;
   padding-right: 0.5rem;
+  z-index: 30;
 
   .middle-section {
     margin: 0.5rem 0rem;

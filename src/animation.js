@@ -24,13 +24,27 @@ export const fadeAnim = {
   show: { opacity: 1, transition: { ease: "easeOut", duration: 0.75 } },
 };
 
-export const imgAnim = {
+export const imgHomePageAnim = {
   hidden: {
     bottom: "-120%",
     opacity: 0,
   },
   show: {
     bottom: "-20%",
+    opacity: 1,
+    transition: {
+      duration: 0.75,
+      ease: "easeOut",
+    },
+  },
+};
+export const imgWorkAnim = {
+  hidden: {
+    bottom: "-100%",
+    opacity: 0,
+  },
+  show: {
+    bottom: "0%",
     opacity: 1,
     transition: {
       duration: 0.75,

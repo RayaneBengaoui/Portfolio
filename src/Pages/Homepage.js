@@ -14,7 +14,7 @@ import {
   homepageAnim,
   sunFrontAnim,
   sunBackAnim,
-  imgAnim,
+  imgHomePageAnim,
   fadeAnim,
 } from "../animation";
 
@@ -30,9 +30,12 @@ const Homepage = ({ navStatus, setNavStatus }) => {
       animate="show"
       exit="exit"
     >
-      <Nav open={navStatus ? "translateX(0%)" : "translateX(-100%)"} />
+      <Nav
+        setNavStatus={setNavStatus}
+        open={navStatus ? "translateX(0%)" : "translateX(-100%)"}
+      />
       <Hamburger navStatus={navStatus} setNavStatus={setNavStatus} />
-      <MoutainBg variants={imgAnim} src={moutainImg} alt="" />
+      <MoutainBg variants={imgHomePageAnim} src={moutainImg} alt="" />
       <Layout>
         <CircleFront variants={sunFrontAnim} />
         <CircleBack variants={sunBackAnim} />
@@ -52,7 +55,7 @@ const Homepage = ({ navStatus, setNavStatus }) => {
           <ButtonStyled variants={fadeAnim}>Discover my work</ButtonStyled>
         </Container>
 
-        <Link to="/work">Next page</Link>
+        {/* <Link to="/work">Next page</Link> */}
       </Layout>
     </HomepageStyled>
   );
@@ -60,7 +63,7 @@ const Homepage = ({ navStatus, setNavStatus }) => {
 
 const HomepageStyled = styled(motion.div)`
   min-height: 100vh;
-  background: linear-gradient(180deg, #0f4b5d 0%, #196172 100%);
+  background: linear-gradient(180deg, #0a5364 0%, #368698 100%);
   z-index: 5;
   position: relative;
 `;
@@ -81,6 +84,7 @@ const MoutainBg = styled(motion.img)`
   bottom: -20%;
   z-index: -5;
   width: 100%;
+  pointer-events: none;
 
   @media (max-width: 1440px) {
     width: 125%;

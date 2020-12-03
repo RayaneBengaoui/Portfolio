@@ -22,10 +22,12 @@ export const imgHomePageAnim = {
   hidden: {
     bottom: "-120%",
     opacity: 0,
+    scale: 3,
   },
   show: {
     bottom: "-20%",
     opacity: 1,
+    scale: 1,
     transition: {
       duration: 0.75,
       ease: "easeOut",
@@ -42,10 +44,12 @@ export const imgWorkAnim = {
   hidden: {
     bottom: "-100%",
     opacity: 0,
+    scale: 3,
   },
   show: {
     bottom: "0%",
     opacity: 1,
+    scale: 1,
     transition: {
       duration: 0.75,
       ease: "easeOut",

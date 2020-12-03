@@ -9,7 +9,7 @@ import { useRef } from "react";
 
 import SliderImg from "../components/SliderImg";
 
-const Slider = () => {
+const Slider = ({ setworkFocus }) => {
   let counterSlide = 0;
   const sliderStyledRef = useRef(null);
 
@@ -43,7 +43,11 @@ const Slider = () => {
         {/* transitionned onClick={() => SliderHandler()} */}
 
         {/* <SlideContainer  */}
-        <SliderImg src={project_2} className="lastclone" />
+        <SliderImg
+          setworkFocus={setworkFocus}
+          src={project_2}
+          className="lastclone"
+        />
         <SliderImg src={project_1} className="no-id" />
         <SliderImg src={project_1} className="no-id" />
         <SliderImg src={project_2} className="no-id" />
@@ -65,7 +69,7 @@ const SliderStyled = styled.div`
   flex-direction: column;
   width: 56.4rem;
   height: 33rem;
-
+  /* border: solid 5px green; */
   /* transform: translateY(-335px); */
   transition: all 0.5s ease-in-out;
 `;

@@ -7,8 +7,12 @@ import moutainNightImg from "../images/night-moutain-bg.png";
 import Nav from "../components/Nav";
 import Hamburger from "../components/Hamburger";
 import Slider from "../components/Slider";
+import WorkDetail from "../components/WorkDetail";
+// React
+import { useState } from "react";
 
 const Work = ({ navStatus, setNavStatus }) => {
+  const [workFocus, setworkFocus] = useState(false);
   return (
     <WorkStyled
       variants={homepageAnim}
@@ -22,8 +26,9 @@ const Work = ({ navStatus, setNavStatus }) => {
       />
       <Hamburger navStatus={navStatus} setNavStatus={setNavStatus} />
       <ImgBg variants={imgWorkAnim} src={moutainNightImg} alt="" />
+      {workFocus && <WorkDetail />}
       <SliderContainer>
-        <Slider />
+        <Slider setworkFocus={setworkFocus} />
       </SliderContainer>
     </WorkStyled>
   );
@@ -52,12 +57,12 @@ const ImgBg = styled(motion.img)`
 `;
 
 const SliderContainer = styled.div`
-  min-width: 80rem;
+  max-width: 80rem;
   height: 36rem;
   margin: 0rem auto;
 
   padding: 2rem;
-
+  /* border: solid 5px red; */
   position: relative;
   overflow: hidden;
 `;

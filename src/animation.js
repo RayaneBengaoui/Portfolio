@@ -11,12 +11,6 @@ export const homepageAnim = {
       staggerChildren: 0.25,
     },
   },
-  exit: {
-    y: 50,
-    transition: {
-      duration: 1,
-    },
-  },
 };
 
 export const fadeAnim = {
@@ -37,6 +31,12 @@ export const imgHomePageAnim = {
       ease: "easeOut",
     },
   },
+  exit: {
+    scale: 1.1,
+    transition: {
+      duration: 1,
+    },
+  },
 };
 export const imgWorkAnim = {
   hidden: {
@@ -49,6 +49,12 @@ export const imgWorkAnim = {
     transition: {
       duration: 0.75,
       ease: "easeOut",
+    },
+  },
+  exit: {
+    scale: 1.1,
+    transition: {
+      duration: 1,
     },
   },
 };

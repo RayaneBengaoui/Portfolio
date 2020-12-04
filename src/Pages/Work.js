@@ -1,8 +1,9 @@
-import { homepageAnim, imgWorkAnim } from "../animation";
+import { homepageAnim, imgWorkAnim, moonAnim } from "../animation";
 import { motion } from "framer-motion";
 import styled from "styled-components";
 //Images
 import moutainNightImg from "../images/night-moutain-bg.png";
+import moon from "../images/moon.png";
 //Components
 import Nav from "../components/Nav";
 import Hamburger from "../components/Hamburger";
@@ -43,6 +44,7 @@ const Work = ({ navStatus, setNavStatus }) => {
           setworkFocus={setworkFocus}
         />
       </SliderContainer>
+      <Moon variants={moonAnim} src={moon} alt="moon" />
     </WorkStyled>
   );
 };
@@ -71,13 +73,15 @@ const ImgBg = styled(motion.img)`
 
 const SliderContainer = styled.div`
   max-width: 80rem;
-  height: 36rem;
+  height: 40rem;
   margin: 0rem auto;
-
   padding: 2rem;
-  /* border: solid 5px red; */
   position: relative;
   overflow: hidden;
+`;
+
+const Moon = styled(motion.img)`
+  position: absolute;
 `;
 
 export default Work;

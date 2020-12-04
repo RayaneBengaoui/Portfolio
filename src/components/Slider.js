@@ -9,6 +9,9 @@ import { useRef } from "react";
 
 import SliderImg from "../components/SliderImg";
 
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faChevronUp, faChevronDown } from "@fortawesome/free-solid-svg-icons";
+
 const Slider = ({ setworkFocus, projectIndex, setProjectIndex }) => {
   let counterSlide = 0;
   const sliderStyledRef = useRef(null);
@@ -34,10 +37,22 @@ const Slider = ({ setworkFocus, projectIndex, setProjectIndex }) => {
   return (
     <SliderComp>
       <ButtonContainer>
-        <ButtonStyled onClick={() => sliderHandler("top")}>Top</ButtonStyled>
-        <ButtonStyled onClick={() => sliderHandler("bottom")}>
+        <FontIcon
+          onClick={() => sliderHandler("top")}
+          size="4x"
+          color="white"
+          icon={faChevronUp}
+        />
+        <FontIcon
+          onClick={() => sliderHandler("bottom")}
+          size="4x"
+          color="white"
+          icon={faChevronDown}
+        />
+        {/* <ButtonStyled onClick={() => sliderHandler("top")}>Top</ButtonStyled> */}
+        {/* <ButtonStyled onClick={() => sliderHandler("bottom")}>
           Down
-        </ButtonStyled>
+        </ButtonStyled> */}
       </ButtonContainer>
       <SliderStyled ref={sliderStyledRef}>
         {/* transitionned onClick={() => SliderHandler()} */}
@@ -85,13 +100,10 @@ const ButtonContainer = styled.div`
   flex-direction: column;
 `;
 
-const ButtonStyled = styled.button`
-  align-self: center;
-  margin-right: 2rem;
-  margin-top: 2rem;
-  /* position: absolute;
-  bottom: 0;
-  left: -30%; */
+const FontIcon = styled(FontAwesomeIcon)`
+  margin-right: 5rem;
+  margin-bottom: 2rem;
+  cursor: pointer;
 `;
 
 // const SlideContainer = styled.div`

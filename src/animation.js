@@ -1,3 +1,4 @@
+//HOMEPAGE ANIMATIONS
 export const homepageAnim = {
   hidden: {
     y: "-100%",
@@ -110,6 +111,19 @@ export const sunBackAnim = {
     opacity: 1,
     transition: {
       duration: 3.9,
+    },
+  },
+};
+
+//WORKPAGE ANIMATIONS
+export const moonAnim = {
+  hidden: { top: "90%", left: "60%", opacity: 0 },
+  show: {
+    top: "10%",
+    left: "5%",
+    opacity: 1,
+    transition: {
+      duration: 4,
     },
   },
 };

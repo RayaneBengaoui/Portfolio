@@ -29,6 +29,11 @@ const StyledImg = styled.img`
   object-fit: cover;
   cursor: pointer;
   position: relative;
+  transition: all 0.2s ease-in-out;
+
+  &:hover {
+    transform: translateY(-35px);
+  }
 `;
 
 export default SliderImg;

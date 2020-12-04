@@ -15,12 +15,31 @@ import {
   imgHomePageAnim,
   fadeAnim,
 } from "../animation";
-
 //Components
 import Nav from "../components/Nav";
 import Hamburger from "../components/Hamburger";
+// React
+import { useState, useEffect } from "react";
 
 const Homepage = ({ navStatus, setNavStatus }) => {
+  const [offsetX, setOffsetX] = useState(0);
+  const [offsetY, setOffsetY] = useState(0);
+
+  useEffect(() => {
+    function handleMouseMove(e) {
+      const valueX = e.screenX;
+      const valueY = e.screenY;
+      setOffsetX((valueX / 1000) * 4);
+      setOffsetY((valueY / 1000) * 4);
+    }
+
+    window.addEventListener("mousemove", handleMouseMove);
+
+    return () => {
+      window.removeEventListener("mousemove", handleMouseMove);
+    };
+  }, [offsetY, offsetX]);
+
   return (
     <HomepageStyled
       variants={homepageAnim}
@@ -35,8 +54,18 @@ const Homepage = ({ navStatus, setNavStatus }) => {
       <Hamburger navStatus={navStatus} setNavStatus={setNavStatus} />
       <MoutainBg variants={imgHomePageAnim} src={moutainImg} alt="" />
       <Layout>
-        <CircleFront variants={sunFrontAnim} />
-        <CircleBack variants={sunBackAnim} />
+        <CircleFront
+          style={{
+            transform: `translate(${offsetX * 5}px,${offsetY * 5}px)`,
+          }}
+          variants={sunFrontAnim}
+        />
+        <CircleBack
+          style={{
+            transform: `translate(${offsetX * 5}px,${offsetY * 5}px)`,
+          }}
+          variants={sunBackAnim}
+        />
 
         <Container navOpen={navStatus ? "25rem" : "0rem"}>
           <Hide>

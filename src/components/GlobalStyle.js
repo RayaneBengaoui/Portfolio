@@ -30,6 +30,16 @@ h3{
     z-index : 100;
 }
 
+h5{
+    font-size : 5rem;
+    color : white;
+}
+
+p{
+    font-size : 1rem;
+    color:white;
+}
+
 
 
 button{

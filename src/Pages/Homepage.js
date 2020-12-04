@@ -18,28 +18,8 @@ import {
 //Components
 import Nav from "../components/Nav";
 import Hamburger from "../components/Hamburger";
-// React
-import { useState, useEffect } from "react";
 
-const Homepage = ({ navStatus, setNavStatus }) => {
-  const [offsetX, setOffsetX] = useState(0);
-  const [offsetY, setOffsetY] = useState(0);
-
-  useEffect(() => {
-    function handleMouseMove(e) {
-      const valueX = e.screenX;
-      const valueY = e.screenY;
-      setOffsetX((valueX / 1000) * 4);
-      setOffsetY((valueY / 1000) * 4);
-    }
-
-    window.addEventListener("mousemove", handleMouseMove);
-
-    return () => {
-      window.removeEventListener("mousemove", handleMouseMove);
-    };
-  }, [offsetY, offsetX]);
-
+const Homepage = ({ navStatus, setNavStatus, offsetX, offsetY }) => {
   return (
     <HomepageStyled
       variants={homepageAnim}
@@ -76,7 +56,7 @@ const Homepage = ({ navStatus, setNavStatus }) => {
           <Line variants={lineAnim} />
           <Hide>
             <motion.h2 variants={titleAnim}>
-              Front-end engineer / Web designer
+              Front-end / Software engineer
             </motion.h2>
           </Hide>
           <ButtonStyled variants={fadeAnim}>Discover my work</ButtonStyled>
@@ -122,7 +102,7 @@ const Container = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
-  transition: all 0.5s ease;
+  transition: all 0.5s ease-in-out;
   margin-left: ${(props) => props.navOpen};
 `;
 

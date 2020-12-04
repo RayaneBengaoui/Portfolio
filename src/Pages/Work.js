@@ -1,4 +1,4 @@
-import { homepageAnim, imgWorkAnim, moonAnim } from "../animation";
+import { homepageAnim, imgWorkAnim, moonAnim, sliderAnim } from "../animation";
 import { motion } from "framer-motion";
 import styled from "styled-components";
 //Images
@@ -9,15 +9,20 @@ import Nav from "../components/Nav";
 import Hamburger from "../components/Hamburger";
 import Slider from "../components/Slider";
 import WorkDetail from "../components/WorkDetail";
+import Star from "../components/Star";
 // React
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 import { projectData } from "../projectData";
 
-const Work = ({ navStatus, setNavStatus }) => {
+//Layout Styles
+import { Hide } from "../Layout";
+
+const Work = ({ navStatus, setNavStatus, offsetX, offsetY }) => {
   const [workFocus, setworkFocus] = useState(false);
   const [projects, setProjects] = useState(projectData);
   const [projectIndex, setProjectIndex] = useState(null);
+
   return (
     <WorkStyled
       variants={homepageAnim}
@@ -37,14 +42,83 @@ const Work = ({ navStatus, setNavStatus }) => {
           project={projects[projectIndex]}
         />
       )}
-      <SliderContainer>
-        <Slider
-          projectIndex={projectIndex}
-          setProjectIndex={setProjectIndex}
-          setworkFocus={setworkFocus}
-        />
-      </SliderContainer>
-      <Moon variants={moonAnim} src={moon} alt="moon" />
+      <Moon
+        variants={moonAnim}
+        src={moon}
+        alt="moon"
+        style={{
+          transform: `translate( ${-offsetX * 5}px, ${-offsetY * 5}px)`,
+        }}
+      />
+      <Hide>
+        <SliderContainer
+          variants={sliderAnim}
+          navOpen={navStatus ? "25rem" : "0rem"}
+        >
+          <Slider
+            projectIndex={projectIndex}
+            setProjectIndex={setProjectIndex}
+            setworkFocus={setworkFocus}
+          />
+        </SliderContainer>
+      </Hide>
+      <Star
+        top="10%"
+        left="10%"
+        offsetX={offsetX}
+        offsetY={offsetY}
+        speed={2}
+      />
+      <Star
+        top="30%"
+        left="15%"
+        offsetX={offsetX}
+        offsetY={offsetY}
+        speed={3}
+      />
+      <Star
+        top="10%"
+        left="50%"
+        offsetX={offsetX}
+        offsetY={offsetY}
+        speed={1}
+      />
+      <Star
+        top="40%"
+        left="90%"
+        offsetX={offsetX}
+        offsetY={offsetY}
+        speed={2}
+      />
+      <Star
+        top="50%"
+        left="25%"
+        offsetX={offsetX}
+        offsetY={offsetY}
+        speed={6}
+      />
+      <Star top="55%" left="5%" offsetX={offsetX} offsetY={offsetY} speed={6} />
+      <Star
+        top="30%"
+        left="60%"
+        offsetX={offsetX}
+        offsetY={offsetY}
+        speed={0.5}
+      />
+      <Star
+        top="60%"
+        left="70%"
+        offsetX={offsetX}
+        offsetY={offsetY}
+        speed={2}
+      />
+      <Star
+        top="42%"
+        left="95%"
+        offsetX={offsetX}
+        offsetY={offsetY}
+        speed={3}
+      />
     </WorkStyled>
   );
 };
@@ -71,13 +145,15 @@ const ImgBg = styled(motion.img)`
   }
 `;
 
-const SliderContainer = styled.div`
+const SliderContainer = styled(motion.div)`
   max-width: 80rem;
   height: 40rem;
   margin: 0rem auto;
   padding: 2rem;
   position: relative;
   overflow: hidden;
+  transition: all 0.5s ease-in-out;
+  margin-left: ${(props) => props.navOpen};
 `;
 
 const Moon = styled(motion.img)`

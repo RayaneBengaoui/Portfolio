@@ -3,7 +3,7 @@ import Work from "./Pages/Work";
 import styled from "styled-components";
 
 // React
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 //Router
 import { Switch, Route, useLocation } from "react-router-dom";
@@ -17,6 +17,25 @@ import { AnimatePresence } from "framer-motion";
 function App() {
   const location = useLocation();
   const [navStatus, setNavStatus] = useState(false);
+
+  const [offsetX, setOffsetX] = useState(0);
+  const [offsetY, setOffsetY] = useState(0);
+
+  useEffect(() => {
+    function handleMouseMove(e) {
+      const valueX = e.screenX;
+      const valueY = e.screenY;
+      setOffsetX((valueX / 1000) * 4);
+      setOffsetY((valueY / 1000) * 4);
+    }
+
+    window.addEventListener("mousemove", handleMouseMove);
+
+    return () => {
+      window.removeEventListener("mousemove", handleMouseMove);
+    };
+  }, [offsetY, offsetX]);
+
   return (
     <AppStyled>
       <GlobalStyle />
@@ -24,10 +43,20 @@ function App() {
       <AnimatePresence exitBeforeEnter>
         <Switch location={location} key={location.pathname}>
           <Route path="/" exact>
-            <Homepage navStatus={navStatus} setNavStatus={setNavStatus} />
+            <Homepage
+              navStatus={navStatus}
+              setNavStatus={setNavStatus}
+              offsetX={offsetX}
+              offsetY={offsetY}
+            />
           </Route>
           <Route path="/work">
-            <Work navStatus={navStatus} setNavStatus={setNavStatus} />
+            <Work
+              navStatus={navStatus}
+              setNavStatus={setNavStatus}
+              offsetX={offsetX}
+              offsetY={offsetY}
+            />
           </Route>
         </Switch>
       </AnimatePresence>

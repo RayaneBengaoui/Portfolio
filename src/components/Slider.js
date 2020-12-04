@@ -12,6 +12,9 @@ import SliderImg from "../components/SliderImg";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faChevronUp, faChevronDown } from "@fortawesome/free-solid-svg-icons";
 
+import { motion } from "framer-motion";
+// import { fadeAnim } from "../animation";
+
 const Slider = ({ setworkFocus, projectIndex, setProjectIndex }) => {
   let counterSlide = 0;
   const sliderStyledRef = useRef(null);
@@ -79,7 +82,7 @@ const Slider = ({ setworkFocus, projectIndex, setProjectIndex }) => {
   );
 };
 
-const SliderComp = styled.div`
+const SliderComp = styled(motion.div)`
   display: flex;
   justify-content: center;
   align-items: center;

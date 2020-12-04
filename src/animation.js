@@ -117,13 +117,24 @@ export const sunBackAnim = {
 
 //WORKPAGE ANIMATIONS
 export const moonAnim = {
-  hidden: { top: "90%", left: "60%", opacity: 0 },
+  hidden: { top: "90%", left: "50%", opacity: 0 },
   show: {
-    top: "10%",
-    left: "5%",
+    top: "25%",
+    left: "75%",
     opacity: 1,
     transition: {
       duration: 4,
+    },
+  },
+};
+
+export const sliderAnim = {
+  hidden: { y: 360 },
+  show: {
+    y: 0,
+    transition: {
+      duration: 0.75,
+      ease: "easeOut",
     },
   },
 };

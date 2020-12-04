@@ -10,13 +10,13 @@ const WorkDetail = ({ project, setworkFocus }) => {
     <WorkDetailStyled>
       <LeftContainer>
         <h5>{project.title}</h5>
-        <img src={project.img} alt="project image" />
+        <img src={project.img} alt="project" />
       </LeftContainer>
       <RightContainer>
         <Links>
           <ProjectLinks>
             <Github>
-              <a target="_blank" href={project.github_url}>
+              <a target="_blank" rel="noreferrer" href={project.github_url}>
                 <FontAwesomeIcon
                   size="5x"
                   color="white"
@@ -26,7 +26,7 @@ const WorkDetail = ({ project, setworkFocus }) => {
               </a>
             </Github>
             <LiveSite>
-              <a target="_blank" href={project.livesite_url}>
+              <a target="_blank" rel="noreferrer" href={project.livesite_url}>
                 <FontAwesomeIcon size="5x" color="white" icon={faGlobe} />
                 <p>Live site</p>
               </a>

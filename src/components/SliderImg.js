@@ -33,6 +33,7 @@ const StyledImg = styled.img`
 
   &:hover {
     transform: translateY(-35px);
+    z-index: 20;
   }
 `;
 

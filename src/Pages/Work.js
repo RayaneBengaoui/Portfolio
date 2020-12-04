@@ -11,8 +11,12 @@ import WorkDetail from "../components/WorkDetail";
 // React
 import { useState } from "react";
 
+import { projectData } from "../projectData";
+
 const Work = ({ navStatus, setNavStatus }) => {
   const [workFocus, setworkFocus] = useState(false);
+  const [projects, setProjects] = useState(projectData);
+  const [projectIndex, setProjectIndex] = useState(null);
   return (
     <WorkStyled
       variants={homepageAnim}
@@ -26,9 +30,18 @@ const Work = ({ navStatus, setNavStatus }) => {
       />
       <Hamburger navStatus={navStatus} setNavStatus={setNavStatus} />
       <ImgBg variants={imgWorkAnim} src={moutainNightImg} alt="" />
-      {workFocus && <WorkDetail />}
+      {workFocus && (
+        <WorkDetail
+          setworkFocus={setworkFocus}
+          project={projects[projectIndex]}
+        />
+      )}
       <SliderContainer>
-        <Slider setworkFocus={setworkFocus} />
+        <Slider
+          projectIndex={projectIndex}
+          setProjectIndex={setProjectIndex}
+          setworkFocus={setworkFocus}
+        />
       </SliderContainer>
     </WorkStyled>
   );

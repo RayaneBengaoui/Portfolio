@@ -1,10 +1,20 @@
 //Styled Components
 import styled from "styled-components";
 
-const SliderImg = ({ src, id, setworkFocus }) => {
+const SliderImg = ({
+  src,
+  id,
+  setworkFocus,
+  setProjectIndex,
+  projectNumber,
+}) => {
+  const eventHandler = () => {
+    setworkFocus(true);
+    setProjectIndex(projectNumber);
+  };
   return (
     <StyledImg
-      onClick={() => setworkFocus(true)}
+      onClick={() => eventHandler()}
       src={src}
       id={id}
       alt="slider img"

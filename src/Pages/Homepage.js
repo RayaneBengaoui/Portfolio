@@ -56,13 +56,13 @@ const Homepage = ({ navStatus, setNavStatus }) => {
       <Layout>
         <CircleFront
           style={{
-            transform: `translate(${offsetX * 5}px,${offsetY * 5}px)`,
+            transform: `translate( ${-offsetX * 5}px, ${-offsetY * 5}px)`,
           }}
           variants={sunFrontAnim}
         />
         <CircleBack
           style={{
-            transform: `translate(${offsetX * 5}px,${offsetY * 5}px)`,
+            transform: `translate( ${-offsetX * 5}px, ${-offsetY * 5}px)`,
           }}
           variants={sunBackAnim}
         />

@@ -1,5 +1,5 @@
 import project_1 from "../images/project_1.png";
-import project_2 from "../images/project_2.png";
+import project_2 from "../images/music_app_project.png";
 //Styled Components
 import styled from "styled-components";
 
@@ -9,7 +9,7 @@ import { useRef } from "react";
 
 import SliderImg from "../components/SliderImg";
 
-const Slider = ({ setworkFocus }) => {
+const Slider = ({ setworkFocus, projectIndex, setProjectIndex }) => {
   let counterSlide = 0;
   const sliderStyledRef = useRef(null);
 
@@ -46,9 +46,15 @@ const Slider = ({ setworkFocus }) => {
         <SliderImg
           setworkFocus={setworkFocus}
           src={project_2}
-          className="lastclone"
+          setProjectIndex={setProjectIndex}
+          projectNumber={0}
         />
-        <SliderImg src={project_1} className="no-id" />
+        <SliderImg
+          setworkFocus={setworkFocus}
+          src={project_1}
+          setProjectIndex={setProjectIndex}
+          projectNumber={1}
+        />
         <SliderImg src={project_1} className="no-id" />
         <SliderImg src={project_2} className="no-id" />
         <SliderImg src={project_1} className="firstclone" />

@@ -4,8 +4,7 @@ import project_2 from "../images/music_app_project.png";
 import styled from "styled-components";
 
 // React
-import { useState } from "react";
-import { useRef } from "react";
+import { useState, useRef, useEffect } from "react";
 
 import SliderImg from "../components/SliderImg";
 
@@ -16,38 +15,30 @@ import { motion } from "framer-motion";
 // import { fadeAnim } from "../animation";
 
 const Slider = ({ setworkFocus, projectIndex, setProjectIndex }) => {
-  let counterSlide = 0;
   const sliderStyledRef = useRef(null);
+  const [counter, setCounter] = useState(0);
 
-  const sliderHandler = (direction) => {
-    if (direction === "top") {
-      counterSlide++;
-    } else {
-      counterSlide--;
+  useEffect(() => {
+    if (counter === -1) {
+      setCounter(0);
     }
-    if (counterSlide === -1) {
-      counterSlide = 0;
+    if (counter === 5) {
+      setCounter(4);
     }
-    if (counterSlide === 5) {
-      counterSlide = 4;
-    }
-
-    sliderStyledRef.current.style.transform = `translateY(${
-      counterSlide * -365
-    }px)`;
-  };
+    sliderStyledRef.current.style.transform = `translateY(${counter * -365}px)`;
+  }, [counter]);
 
   return (
     <SliderComp>
       <ButtonContainer>
         <FontIcon
-          onClick={() => sliderHandler("top")}
+          onClick={() => setCounter(counter + 1)}
           size="4x"
           color="white"
           icon={faChevronUp}
         />
         <FontIcon
-          onClick={() => sliderHandler("bottom")}
+          onClick={() => setCounter(counter - 1)}
           size="4x"
           color="white"
           icon={faChevronDown}

@@ -154,6 +154,10 @@ const SliderContainer = styled(motion.div)`
   overflow: hidden;
   transition: all 0.5s ease-in-out;
   margin-left: ${(props) => props.navOpen};
+
+  &:hover {
+    z-index: 6;
+  }
 `;
 
 const Moon = styled(motion.img)`

@@ -1,5 +1,6 @@
 import Homepage from "./Pages/Homepage";
 import Work from "./Pages/Work";
+import About from "./Pages/About";
 import styled from "styled-components";
 
 // React
@@ -52,6 +53,14 @@ function App() {
           </Route>
           <Route path="/work">
             <Work
+              navStatus={navStatus}
+              setNavStatus={setNavStatus}
+              offsetX={offsetX}
+              offsetY={offsetY}
+            />
+          </Route>
+          <Route path="/about">
+            <About
               navStatus={navStatus}
               setNavStatus={setNavStatus}
               offsetX={offsetX}

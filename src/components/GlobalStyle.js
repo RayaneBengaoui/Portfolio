@@ -11,6 +11,10 @@ const GlobalStyle = createGlobalStyle`
 html{
     font-family: 'Lato', sans-serif;
     font-size : 62.5%;
+
+    @media (max-width : 1750px){
+        font-size : 40%
+    }
 }
 
 h1{

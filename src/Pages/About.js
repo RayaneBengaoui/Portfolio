@@ -26,7 +26,35 @@ const About = ({ navStatus, setNavStatus, offsetX, offsetY }) => {
       <TopContainer>
         <BgImg variants={imgWorkAnim} src={moutainDayImg} alt="moutains" />
       </TopContainer>
-      <BottomContainer></BottomContainer>
+      <BottomContainer>
+        <FirstSection>
+          <LeftSectionContainer>
+            <Numero color="white">01</Numero>
+            <TitleContainer>
+              <Title>- WHO AM I -</Title>
+            </TitleContainer>
+          </LeftSectionContainer>
+          <RightSectionContainer></RightSectionContainer>
+        </FirstSection>
+        <SecondSection>
+          <LeftSectionContainer>
+            <Numero color="white">02</Numero>
+            <TitleContainer>
+              <Title>- PASSIONS -</Title>
+            </TitleContainer>
+          </LeftSectionContainer>
+          <RightSectionContainer></RightSectionContainer>
+        </SecondSection>
+        <ThirdSection>
+          <LeftSectionContainer>
+            <Numero color=" #091219">03</Numero>
+            <TitleContainer>
+              <Title color=" #091219">- SKILLS -</Title>
+            </TitleContainer>
+          </LeftSectionContainer>
+          <RightSectionContainer></RightSectionContainer>{" "}
+        </ThirdSection>
+      </BottomContainer>
     </AboutStyled>
   );
 };
@@ -45,7 +73,69 @@ const TopContainer = styled.div`
 const BottomContainer = styled.div`
   width: 100%;
   height: 150vh;
+  /* background: #091219; */
+  background: white;
+`;
+const FirstSection = styled.div`
+  width: 100%;
+  height: 50vh;
   background: #091219;
+  border-bottom: 5px solid white;
+  display: flex;
+`;
+const SecondSection = styled.div`
+  width: 100%;
+  height: 50vh;
+  background: #091219;
+  display: flex;
+`;
+const ThirdSection = styled.div`
+  width: 100%;
+  height: 50vh;
+  background: white;
+  display: flex;
+`;
+
+const LeftSectionContainer = styled.div`
+  width: 40%;
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 5rem;
+`;
+
+const Numero = styled.p`
+  font-size: 12rem;
+  color: ${(props) => props.color};
+  position: relative;
+  margin-left: 5rem;
+  font-family: "Montserrat", sans-serif;
+
+  &::before {
+    content: "";
+    width: 110%;
+    height: 5px;
+    background-color: ${(props) => props.color};
+    position: absolute;
+    top: 50%;
+
+    left: -100%;
+  }
+`;
+
+const TitleContainer = styled.div`
+  width: 60%;
+  text-align: center;
+`;
+
+const Title = styled.h2`
+  font-size: 7rem;
+  font-weight: 300;
+  color: ${(props) => props.color};
+`;
+const RightSectionContainer = styled.div`
+  width: 60%;
 `;
 
 const BgImg = styled(motion.img)`

@@ -19,6 +19,9 @@ import {
 import Nav from "../components/Nav";
 import Hamburger from "../components/Hamburger";
 
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faChevronUp, faChevronDown } from "@fortawesome/free-solid-svg-icons";
+
 const Homepage = ({ navStatus, setNavStatus, offsetX, offsetY }) => {
   return (
     <HomepageStyled

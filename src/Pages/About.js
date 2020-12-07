@@ -9,6 +9,9 @@ import moutainDayImg from "../images/fond_jour_crop.png";
 import { homepageAnim, imgWorkAnim, moonAnim, sliderAnim } from "../animation";
 import { motion } from "framer-motion";
 
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faLanguage, faPaintBrush } from "@fortawesome/free-solid-svg-icons";
+
 const About = ({ navStatus, setNavStatus, offsetX, offsetY }) => {
   return (
     <AboutStyled
@@ -34,7 +37,21 @@ const About = ({ navStatus, setNavStatus, offsetX, offsetY }) => {
               <Title>- WHO AM I -</Title>
             </TitleContainer>
           </LeftSectionContainer>
-          <RightSectionContainer></RightSectionContainer>
+          <RightSectionContainer>
+            <TextHolder>
+              <h2>RAYANE BENGAOUI</h2>
+              <h3>
+                Born in 1997 in France and recently graduated from a French
+                engineering school (UTT) with a diploma in Computer Science and
+                Information Systems. During my studies I’ve done 2 internships
+                as Project Manager Assistant and Data Scientist which teached me
+                how to collaborate efficiently with my co-workers to deliver
+                VALUE to clients within a defined period of time. Now I’m
+                focusing on web development and specificaly on Front-end where
+                I’m interested in Responsive Applications and Design.
+              </h3>
+            </TextHolder>
+          </RightSectionContainer>
         </FirstSection>
         <SecondSection>
           <LeftSectionContainer>
@@ -43,7 +60,40 @@ const About = ({ navStatus, setNavStatus, offsetX, offsetY }) => {
               <Title>- PASSIONS -</Title>
             </TitleContainer>
           </LeftSectionContainer>
-          <RightSectionContainer></RightSectionContainer>
+          <RightSectionContainer>
+            <PassionContainer>
+              <Passion>
+                <IconContainer>
+                  <FontAwesomeIcon size="5x" color="black" icon={faLanguage} />
+                </IconContainer>
+                <h4>LANGUAGES</h4>
+                <p>
+                  I love languages and I make sure that each day I dedicate 1h
+                  of my time to study it. I’m fluent in French and C1 in
+                  English, I’m intermediate in Korean which I’d like to take a
+                  profecient test and I have notions in Spanish/German.
+                </p>
+              </Passion>
+              <Passion>
+                <IconContainer>
+                  <FontAwesomeIcon
+                    size="4x"
+                    color="black"
+                    icon={faPaintBrush}
+                  />
+                </IconContainer>
+                <h4>DIGITAL PAINTING</h4>
+                <p>
+                  I have a huge interest in Digital Arts especially Digital
+                  Painting. I learned Photoshop mainly through practicing it, in
+                  the meantime it has sharpened my attention to details and
+                  helped me to break down complicated forms into easiest chunks.
+                  In my opinion it has a lot in common with
+                  Structuring/Layouting when coding.
+                </p>
+              </Passion>
+            </PassionContainer>
+          </RightSectionContainer>
         </SecondSection>
         <ThirdSection>
           <LeftSectionContainer>
@@ -136,13 +186,106 @@ const Title = styled.h2`
 `;
 const RightSectionContainer = styled.div`
   width: 60%;
+  padding: 6rem 8rem;
+  z-index: 0;
+`;
+
+const TextHolder = styled.div`
+  background-color: #1b3143;
+  min-width: 70rem;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 2rem 4rem;
+  position: relative;
+
+  &::before {
+    content: "";
+    width: 4rem;
+    height: 4rem;
+    background: white;
+    position: absolute;
+    bottom: -1.5rem;
+    left: -1.5rem;
+  }
+  &::after {
+    content: "";
+    width: 10rem;
+    height: 10rem;
+    background: white;
+    position: absolute;
+    right: -2rem;
+    top: -2rem;
+    z-index: -8;
+  }
+
+  h2 {
+    font-size: 3rem;
+    font-weight: 700;
+    letter-spacing: 0.7rem;
+    padding-bottom: 2rem;
+  }
+
+  h3 {
+    font-size: 2rem;
+    font-weight: 300;
+    letter-spacing: 0.15rem;
+    line-height: 3rem;
+  }
+`;
+
+const PassionContainer = styled.div`
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4rem;
+`;
+const Passion = styled.div`
+  width: 50%;
+  height: 100%;
+
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: column;
+
+  h4 {
+    font-size: 2rem;
+    color: white;
+    letter-spacing: 0.3rem;
+    padding: 2rem 0rem;
+    font-weight: 700;
+  }
+
+  p {
+    max-width: 44rem;
+    font-size: 1.8rem;
+    font-weight: 300;
+    letter-spacing: 0.15rem;
+    line-height: 3rem;
+    text-align: center;
+  }
+`;
+
+const IconContainer = styled.div`
+  background-color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  height: 5rem;
+  border-radius: 1rem;
 `;
 
 const BgImg = styled(motion.img)`
   position: absolute;
-  left: -1%;
+  left: 0%;
   bottom: 50%;
-  max-width: 110%;
+  min-width: 100%;
   pointer-events: none;
   z-index: 20;
 `;

@@ -283,7 +283,7 @@ const ThirdSection = styled.div`
 `;
 
 const LeftSectionContainer = styled.div`
-  width: 40%;
+  width: 35%;
   position: relative;
   display: flex;
   justify-content: space-between;
@@ -316,20 +316,23 @@ const TitleContainer = styled.div`
 `;
 
 const Title = styled.h2`
-  font-size: 7rem;
+  font-size: 6rem;
   font-weight: 300;
   color: ${(props) => props.color};
 `;
 const RightSectionContainer = styled.div`
-  width: 60%;
+  width: 65%;
+
   padding: 4rem 6rem;
   z-index: 0;
+  position: relative;
 `;
 
 const TextHolder = styled.div`
   background-color: #1b3143;
   min-width: 70rem;
-  height: 100%;
+  height: 80%;
+  margin: 4rem;
   display: flex;
   flex-direction: column;
   justify-content: center;

@@ -10,7 +10,30 @@ import { homepageAnim, imgWorkAnim, moonAnim, sliderAnim } from "../animation";
 import { motion } from "framer-motion";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faLanguage, faPaintBrush } from "@fortawesome/free-solid-svg-icons";
+import {
+  faLanguage,
+  faPaintBrush,
+  faDatabase,
+} from "@fortawesome/free-solid-svg-icons";
+import {
+  faHtml5,
+  faCss3Alt,
+  faSass,
+  faJs,
+  faReact,
+  faGitSquare,
+  faNpm,
+} from "@fortawesome/free-brands-svg-icons";
+
+import pythonIcon from "../images/python_icon.png";
+import typeScriptIcon from "../images/ts_icon.png";
+import ReduxIcon from "../images/redux_icon.png";
+import jestIcon from "../images/jest_icon.png";
+import framerIcon from "../images/framer_icon.png";
+import styledIcon from "../images/styled_icon.png";
+import psIcon from "../images/ps_icon.png";
+import figmaIcon from "../images/figma_icon.png";
+import officeIcon from "../images/office_icon.png";
 
 const About = ({ navStatus, setNavStatus, offsetX, offsetY }) => {
   return (
@@ -62,7 +85,7 @@ const About = ({ navStatus, setNavStatus, offsetX, offsetY }) => {
           </LeftSectionContainer>
           <RightSectionContainer>
             <PassionContainer>
-              <Passion>
+              <Passion width="40%">
                 <IconContainer>
                   <FontAwesomeIcon size="5x" color="black" icon={faLanguage} />
                 </IconContainer>
@@ -74,7 +97,7 @@ const About = ({ navStatus, setNavStatus, offsetX, offsetY }) => {
                   profecient test and I have notions in Spanish/German.
                 </p>
               </Passion>
-              <Passion>
+              <Passion width="60%">
                 <IconContainer>
                   <FontAwesomeIcon
                     size="4x"
@@ -102,7 +125,120 @@ const About = ({ navStatus, setNavStatus, offsetX, offsetY }) => {
               <Title color=" #091219">- SKILLS -</Title>
             </TitleContainer>
           </LeftSectionContainer>
-          <RightSectionContainer></RightSectionContainer>{" "}
+          <RightSectionContainer>
+            <SkillSection>
+              <SkillContainer width="50%">
+                <h4>CODING LANGUAGES</h4>
+                <div className="break-flex">
+                  <SkillLeftContainer>
+                    <Skill>
+                      <FontAwesomeIcon
+                        size="4x"
+                        color="#DD4B25"
+                        icon={faHtml5}
+                      />
+                      <p>HTML</p>
+                    </Skill>
+                    <Skill>
+                      <FontAwesomeIcon
+                        size="4x"
+                        color="#264DE4"
+                        icon={faCss3Alt}
+                      />
+                      <p>CSS</p>
+                    </Skill>
+                    <Skill>
+                      <FontAwesomeIcon
+                        size="4x"
+                        color="#C76494"
+                        icon={faSass}
+                      />
+                      <p>SASS</p>
+                    </Skill>
+                    <Skill>
+                      <FontAwesomeIcon size="4x" color="#EFD81D" icon={faJs} />
+                      <p>JavaScript</p>
+                    </Skill>
+                  </SkillLeftContainer>
+                  <SkillRightContainer>
+                    <Skill>
+                      <FontAwesomeIcon
+                        size="4x"
+                        color="black"
+                        icon={faDatabase}
+                      />
+                      <p>SQL</p>
+                    </Skill>
+                    <Skill>
+                      <img src={pythonIcon} alt="python programmation" />
+                      <p>PYTHON</p>
+                    </Skill>
+                    <Skill>
+                      <img
+                        src={typeScriptIcon}
+                        alt="typescript programmation"
+                      />
+                      <p>TypeScript</p>
+                    </Skill>
+                  </SkillRightContainer>
+                </div>
+              </SkillContainer>
+              <SkillContainer width="25%">
+                <h4>FRAMEWORKS/LIB</h4>
+                <SkillLeftContainer>
+                  <Skill>
+                    <FontAwesomeIcon size="4x" color="#5ED3F3" icon={faReact} />
+                    <p>REACT</p>
+                  </Skill>
+                  <Skill>
+                    <img src={ReduxIcon} alt="Redux" />
+                    <p>REDUX</p>
+                  </Skill>
+                  <Skill>
+                    <img src={jestIcon} alt="jest testing" />
+                    <p>JEST</p>
+                  </Skill>
+                  <Skill>
+                    <img src={framerIcon} alt="framer-motion" />
+                    <p>FRAMER MOTION</p>
+                  </Skill>
+                  <Skill>
+                    <img src={styledIcon} alt="styled-components" />
+                    <p>STYLED COMPONENTS</p>
+                  </Skill>
+                </SkillLeftContainer>
+              </SkillContainer>
+              <SkillContainer width="25%">
+                <h4>TOOLS</h4>
+                <SkillLeftContainer>
+                  <Skill>
+                    <FontAwesomeIcon
+                      size="4x"
+                      color="black"
+                      icon={faGitSquare}
+                    />
+                    <p>GIT</p>
+                  </Skill>
+                  <Skill>
+                    <FontAwesomeIcon size="4x" color="black" icon={faNpm} />
+                    <p>NPM</p>
+                  </Skill>
+                  <Skill>
+                    <img src={psIcon} alt="photoshop" />
+                    <p>PHOTOSHOP</p>
+                  </Skill>
+                  <Skill>
+                    <img src={figmaIcon} alt="figma" />
+                    <p>FIGMA</p>
+                  </Skill>
+                  <Skill>
+                    <img src={officeIcon} alt="microsoft office" />
+                    <p>OFFICE</p>
+                  </Skill>
+                </SkillLeftContainer>
+              </SkillContainer>
+            </SkillSection>
+          </RightSectionContainer>
         </ThirdSection>
       </BottomContainer>
     </AboutStyled>
@@ -186,7 +322,7 @@ const Title = styled.h2`
 `;
 const RightSectionContainer = styled.div`
   width: 60%;
-  padding: 6rem 8rem;
+  padding: 4rem 6rem;
   z-index: 0;
 `;
 
@@ -245,9 +381,9 @@ const PassionContainer = styled.div`
   gap: 4rem;
 `;
 const Passion = styled.div`
-  width: 50%;
+  /* width: 50%; */
   height: 100%;
-
+  width: ${(props) => props.width};
   display: flex;
   justify-content: flex-start;
   align-items: center;
@@ -281,11 +417,82 @@ const IconContainer = styled.div`
   border-radius: 1rem;
 `;
 
+const SkillSection = styled.div`
+  display: flex;
+  gap: 8rem;
+`;
+
+const SkillContainer = styled.div`
+  width: ${(props) => props.width};
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  /* align-items: center; */
+
+  .break-flex {
+    display: flex;
+    height: 100%;
+  }
+
+  h4 {
+    font-size: 2rem;
+    color: #091219;
+    letter-spacing: 0.3rem;
+    padding-bottom: 1rem;
+    margin-bottom: 3rem;
+    font-weight: 700;
+    text-align: center;
+    border-bottom: 1px solid #000;
+  }
+
+  p {
+    font-size: 1.5rem;
+    font-weight: 700;
+    letter-spacing: 0.15rem;
+    color: #091219;
+  }
+`;
+
+const SkillLeftContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+
+  justify-content: space-evenly;
+  margin-right: 4rem;
+
+  width: 100%;
+  height: 100%;
+  img {
+    width: 15%;
+  }
+`;
+
+const SkillRightContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  width: 100%;
+  height: 100%;
+  img {
+    width: 20%;
+  }
+`;
+
+const Skill = styled.div`
+  display: flex;
+  align-items: center;
+  margin-bottom: 2.5rem;
+
+  p {
+    padding-left: 2rem;
+  }
+`;
+
 const BgImg = styled(motion.img)`
   position: absolute;
   left: 0%;
   bottom: 50%;
-  min-width: 100%;
+  width: 100%;
   pointer-events: none;
   z-index: 20;
 `;

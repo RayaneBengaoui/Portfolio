@@ -27,6 +27,11 @@ const HamburgerStyled = styled(motion.div)`
 
   transform-origin: center;
 
+  @media (max-width: 1050px) {
+    top: 3rem;
+    right: 3rem;
+  }
+
   div {
     :first-child {
       transform: ${({ open }) => (open ? "rotate(45deg)" : "rotate(0)")};

@@ -13,7 +13,10 @@ html{
     font-size : 62.5%;
 
     @media (max-width : 1750px){
-        font-size : 40%
+        font-size : 50%
+    }
+    @media (max-width : 650px){
+        font-size : 30%
     }
 }
 

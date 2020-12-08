@@ -81,6 +81,12 @@ const NavStyled = styled.div`
   padding-left: 0.5rem;
   padding-right: 0.5rem;
   z-index: 30;
+  @media (max-width: 1050px) {
+    width: 100%;
+    h3 {
+      font-size: 5rem;
+    }
+  }
 
   .middle-section {
     margin: 0.5rem 0rem;
@@ -107,6 +113,9 @@ const Section = styled.div`
     img {
       transform: ${(props) => props.rotate};
       width: 50%;
+      @media (max-width: 1050px) {
+        width: 25%;
+      }
     }
     .cover {
       opacity: 0.25;
@@ -117,6 +126,7 @@ const Section = styled.div`
 const Cover = styled.div`
   width: 100%;
   height: 100%;
+
   opacity: 0;
   background-color: black;
   position: absolute;
@@ -126,6 +136,9 @@ const Cover = styled.div`
 const SectionImage = styled.img`
   width: 60%;
   transition: all 0.5s ease-out;
+  @media (max-width: 1050px) {
+    width: 20rem;
+  }
 `;
 
 const SectionLine = styled.div`
@@ -133,6 +146,9 @@ const SectionLine = styled.div`
   height: 0.5rem;
   background: ${(props) => props.bg_color};
   z-index: 100;
+  @media (max-width: 1050px) {
+    width: 30%;
+  }
 `;
 
 export default Nav;

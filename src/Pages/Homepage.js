@@ -124,6 +124,10 @@ const Line = styled(motion.div)`
   width: 60%;
   background-color: #f3b659;
   margin-bottom: 2rem;
+  @media (max-width: 650px) {
+    width: 100%;
+    margin-bottom: 7rem;
+  }
 `;
 
 const MoutainBg = styled(motion.img)`
@@ -132,9 +136,10 @@ const MoutainBg = styled(motion.img)`
   z-index: -5;
   width: 100%;
   user-select: none;
+  transition: all 0.5s ease-in-out;
 
-  @media (max-width: 1440px) {
-    width: 125%;
+  @media (max-width: 400px) {
+    width: 220%;
   }
 `;
 
@@ -147,9 +152,20 @@ const Container = styled.div`
   transition: all 0.5s ease-in-out;
   margin-left: ${(props) => props.navOpen};
   user-select: none;
+  /* background-color: lightcoral; */
+
+  @media (max-width: 1050px) {
+    min-width: 100%;
+    min-height: 100vh;
+    justify-content: center;
+    align-items: center;
+  }
 
   .links {
     margin-top: 2rem;
+    @media (max-width: 1050px) {
+      margin: 5rem 0rem;
+    }
   }
 
   .links > * + * {
@@ -171,6 +187,13 @@ const Container = styled.div`
     color: black;
     font-weight: 700;
     transition: all ease 0.5s;
+
+    @media (max-width: 1050px) {
+      font-size: 3rem;
+      height: 6rem;
+      width: 100%;
+      padding: 2rem;
+    }
     &:hover {
       background: #d49f4e;
       color: white;

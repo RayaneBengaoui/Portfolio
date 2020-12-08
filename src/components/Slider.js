@@ -17,16 +17,29 @@ import { motion } from "framer-motion";
 const Slider = ({ setworkFocus, projectIndex, setProjectIndex }) => {
   const sliderStyledRef = useRef(null);
   const [counter, setCounter] = useState(0);
+  const [translate, setTranslate] = useState(-364);
 
   useEffect(() => {
+    if (window.innerWidth >= 1750) {
+      setTranslate(-364);
+    } else {
+      if (window.innerWidth <= 650) {
+        setTranslate(-238);
+      } else {
+        setTranslate(-299);
+      }
+    }
+
     if (counter === -1) {
       setCounter(0);
     }
     if (counter === 5) {
       setCounter(4);
     }
-    sliderStyledRef.current.style.transform = `translateY(${counter * -365}px)`;
-  }, [counter]);
+    sliderStyledRef.current.style.transform = `translateY(${
+      counter * translate
+    }px)`;
+  }, [counter, translate]);
 
   return (
     <SliderComp>
@@ -77,6 +90,7 @@ const SliderComp = styled(motion.div)`
   display: flex;
   justify-content: center;
   align-items: center;
+  user-select: none;
 `;
 
 const SliderStyled = styled.div`
@@ -84,7 +98,7 @@ const SliderStyled = styled.div`
   flex-direction: column;
   width: 56.4rem;
   height: 33rem;
-  /* border: solid 5px green; */
+
   /* transform: translateY(-335px); */
   transition: all 0.5s ease-in-out;
 `;

@@ -52,6 +52,15 @@ const WorkDetailStyled = styled.div`
   display: flex;
   padding: 4rem 7rem;
   gap: 3rem;
+
+  @media (max-width: 1550px) {
+    flex-direction: column-reverse;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2rem 3rem;
+    height: 90%;
+    bottom: 0;
+  }
 `;
 
 const LeftContainer = styled.div`
@@ -61,6 +70,11 @@ const LeftContainer = styled.div`
   justify-content: space-evenly;
   align-items: center;
 
+  @media (max-width: 1550px) {
+    width: 100%;
+    height: 50%;
+  }
+
   img {
     max-width: 100%;
   }
@@ -68,8 +82,14 @@ const LeftContainer = styled.div`
 
 const RightContainer = styled.div`
   width: 50%;
+
   display: flex;
   flex-direction: column;
+
+  @media (max-width: 1550px) {
+    width: 100%;
+    height: 50%;
+  }
 `;
 
 const Links = styled.div`

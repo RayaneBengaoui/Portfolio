@@ -138,6 +138,7 @@ const ImgBg = styled(motion.img)`
   bottom: 20%;
   z-index: 5;
   width: 100%;
+  user-select: none;
   pointer-events: none;
 
   @media (max-width: 1440px) {

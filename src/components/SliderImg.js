@@ -24,6 +24,7 @@ const SliderImg = ({
 
 const StyledImg = styled.img`
   margin: 2rem 0rem;
+
   width: 100%;
   height: 100%;
   object-fit: cover;

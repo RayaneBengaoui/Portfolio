@@ -134,8 +134,8 @@ const Line = styled(motion.div)`
 `;
 
 const MoutainBg = styled(motion.img)`
-  position: fixed;
-  bottom: -20%;
+  position: absolute;
+  /* bottom: -20%; */
   z-index: -5;
   width: 100%;
   user-select: none;

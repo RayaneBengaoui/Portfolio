@@ -40,7 +40,6 @@ function App() {
   return (
     <AppStyled>
       <GlobalStyle />
-
       <AnimatePresence exitBeforeEnter>
         <Switch location={location} key={location.pathname}>
           <Route path="/" exact>

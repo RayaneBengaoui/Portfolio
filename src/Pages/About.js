@@ -268,8 +268,8 @@ const AboutStyled = styled(motion.div)`
 
 const BgImg = styled(motion.img)`
   position: absolute;
-  left: 0%;
-  bottom: 0%;
+  /* left: 0%;
+  bottom: 0%; */
   width: 100%;
   pointer-events: none;
   z-index: 20;

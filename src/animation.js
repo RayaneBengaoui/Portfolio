@@ -10,7 +10,7 @@ export const homepageAnim = {
 
     transition: {
       duration: 1,
-      when: "beforeChildren",
+      // when: "beforeChildren",
       staggerChildren: 0.2,
     },
   },

@@ -83,6 +83,7 @@ const NavStyled = styled.div`
   z-index: 30;
   @media (max-width: 1050px) {
     width: 100%;
+    height: 100vh;
     h3 {
       font-size: 5rem;
     }

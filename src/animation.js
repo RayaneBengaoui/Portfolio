@@ -1,3 +1,5 @@
+import { Redirect } from "react-router-dom";
+
 //HOMEPAGE ANIMATIONS
 export const homepageAnim = {
   hidden: {
@@ -10,6 +12,12 @@ export const homepageAnim = {
       duration: 1,
       when: "beforeChildren",
       staggerChildren: 0.2,
+    },
+  },
+  exit: {
+    opacity: 0,
+    transition: {
+      duration: 1,
     },
   },
 };

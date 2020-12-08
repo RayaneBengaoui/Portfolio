@@ -307,6 +307,9 @@ const BottomContainer = styled.div`
   /* background: #091219; */
   background: white;
   z-index: 20;
+  @media (max-width: 1150px) {
+    height: 265vh;
+  }
 `;
 const FirstSection = styled.div`
   width: 100%;
@@ -315,18 +318,30 @@ const FirstSection = styled.div`
   border-bottom: 5px solid white;
   display: flex;
   z-index: 50;
+  @media (max-width: 1150px) {
+    flex-direction: column;
+    height: 75vh;
+  }
 `;
 const SecondSection = styled.div`
   width: 100%;
   height: 50vh;
   background: #091219;
   display: flex;
+  @media (max-width: 1150px) {
+    flex-direction: column;
+    height: 75vh;
+  }
 `;
 const ThirdSection = styled.div`
   width: 100%;
   height: 50vh;
   background: white;
   display: flex;
+  @media (max-width: 1150px) {
+    flex-direction: column;
+    height: 115vh;
+  }
 `;
 
 const LeftSectionContainer = styled.div`
@@ -336,6 +351,11 @@ const LeftSectionContainer = styled.div`
   justify-content: space-between;
   align-items: center;
   gap: 5rem;
+
+  @media (max-width: 1150px) {
+    width: 100%;
+    justify-content: flex-start;
+  }
 `;
 
 const Numero = styled.p`
@@ -360,12 +380,19 @@ const Numero = styled.p`
 const TitleContainer = styled.div`
   width: 60%;
   text-align: center;
+
+  @media (max-width: 1150px) {
+    /* width: 100%; */
+  }
 `;
 
 const Title = styled.h2`
   font-size: 6rem;
   font-weight: 300;
   color: ${(props) => props.color};
+  @media (max-width: 400px) {
+    font-size: 5rem;
+  }
 `;
 const RightSectionContainer = styled.div`
   width: 65%;
@@ -373,6 +400,11 @@ const RightSectionContainer = styled.div`
   padding: 4rem 6rem;
   z-index: 0;
   position: relative;
+  @media (max-width: 1150px) {
+    width: 100%;
+    min-height: 70%;
+    padding: 2rem 3rem;
+  }
 `;
 
 const TextHolder = styled.div`
@@ -386,6 +418,10 @@ const TextHolder = styled.div`
   align-items: flex-start;
   padding: 2rem 4rem;
   position: relative;
+  @media (max-width: 1150px) {
+    min-width: 45rem;
+    min-height: 100%;
+  }
 
   &::before {
     content: "";
@@ -438,6 +474,9 @@ const Passion = styled.div`
   justify-content: flex-start;
   align-items: center;
   flex-direction: column;
+  @media (max-width: 1150px) {
+    justify-content: center;
+  }
 
   h4 {
     font-size: 2rem;
@@ -470,6 +509,16 @@ const IconContainer = styled.div`
 const SkillSection = styled.div`
   display: flex;
   gap: 8rem;
+  height: 100%;
+
+  @media (max-width: 1150px) {
+    justify-content: center;
+  }
+  @media (max-width: 650px) {
+    gap: 4rem;
+    flex-direction: column;
+    align-items: center;
+  }
 `;
 
 const SkillContainer = styled.div`
@@ -477,7 +526,10 @@ const SkillContainer = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  /* align-items: center; */
+
+  @media (max-width: 650px) {
+    width: 30rem;
+  }
 
   .break-flex {
     display: flex;
@@ -512,6 +564,7 @@ const SkillLeftContainer = styled.div`
 
   width: 100%;
   height: 100%;
+
   img {
     width: 15%;
   }

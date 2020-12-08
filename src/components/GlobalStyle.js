@@ -16,7 +16,7 @@ html{
         font-size : 50%
     }
     @media (max-width : 650px){
-        font-size : 30%
+        font-size : 40%
     }
 }
 

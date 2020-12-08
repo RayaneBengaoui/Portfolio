@@ -117,6 +117,9 @@ const HomepageStyled = styled(motion.div)`
 const Title = styled(motion.h1)`
   padding-bottom: 1rem;
   user-select: none;
+  @media (max-width: 650px) {
+    font-size: 7rem;
+  }
 `;
 
 const Line = styled(motion.div)`

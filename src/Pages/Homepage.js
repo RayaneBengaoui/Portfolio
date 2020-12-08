@@ -22,6 +22,8 @@ import Hamburger from "../components/Hamburger";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faLinkedin, faGithubSquare } from "@fortawesome/free-brands-svg-icons";
 
+import { Link } from "react-router-dom";
+
 const Homepage = ({ navStatus, setNavStatus, offsetX, offsetY }) => {
   return (
     <HomepageStyled
@@ -89,7 +91,16 @@ const Homepage = ({ navStatus, setNavStatus, offsetX, offsetY }) => {
               </motion.a>
             </motion.div>
           </Hide>
-          <ButtonStyled variants={fadeAnim}>Discover my work</ButtonStyled>
+          <AnimateLink variants={fadeAnim}>
+            <Link
+              className="btnLink"
+              onClick={() => setNavStatus(false)}
+              to="/work"
+            >
+              Discover my work
+              {/* <ButtonStyled variants={fadeAnim}>Discover my work</ButtonStyled> */}
+            </Link>
+          </AnimateLink>
         </Container>
       </Layout>
     </HomepageStyled>
@@ -105,6 +116,7 @@ const HomepageStyled = styled(motion.div)`
 
 const Title = styled(motion.h1)`
   padding-bottom: 1rem;
+  user-select: none;
 `;
 
 const Line = styled(motion.div)`
@@ -119,7 +131,7 @@ const MoutainBg = styled(motion.img)`
   bottom: -20%;
   z-index: -5;
   width: 100%;
-  pointer-events: none;
+  user-select: none;
 
   @media (max-width: 1440px) {
     width: 125%;
@@ -134,6 +146,7 @@ const Container = styled.div`
   justify-content: flex-end;
   transition: all 0.5s ease-in-out;
   margin-left: ${(props) => props.navOpen};
+  user-select: none;
 
   .links {
     margin-top: 2rem;
@@ -143,12 +156,40 @@ const Container = styled.div`
     margin-left: 3rem;
     margin-top: 5rem;
   }
+
+  .btnLink {
+    margin-top: 2rem;
+    background-color: #f3b659;
+    border-radius: 10px;
+    width: 20%;
+    height: 4rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5rem;
+    text-decoration: none;
+    color: black;
+    font-weight: 700;
+    transition: all ease 0.5s;
+    &:hover {
+      background: #d49f4e;
+      color: white;
+    }
+    user-select: none;
+  }
 `;
+
+const AnimateLink = styled(motion.div)``;
 
 const ButtonStyled = styled(motion.button)`
   align-self: flex-start;
-  background-color: #f3b659;
+  background: #f3b659;
   margin-top: 2rem;
+  &:hover {
+    background: #d49f4e;
+    color: white;
+  }
+  user-select: none;
 `;
 
 const CircleFront = styled(motion.div)`

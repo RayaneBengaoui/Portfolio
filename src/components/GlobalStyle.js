@@ -48,17 +48,14 @@ p{
 
 button{
     font-weight:bold;
-    font-size:1.5rem;
+    font-size:2rem;
     font-family: inherit;
-    padding : 2rem 4rem;
+    padding : 1.7rem 2rem;
     border-radius : 200px;
     border : none;
     cursor : pointer;
     transition: all 0.5s ease;
-    &:hover{
-        background-color : #d68d64;
-        color:white;
-    }
+    
 } 
 
 

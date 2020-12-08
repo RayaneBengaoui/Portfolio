@@ -9,14 +9,25 @@ export const homepageAnim = {
     transition: {
       duration: 1,
       when: "beforeChildren",
-      staggerChildren: 0.15,
+      staggerChildren: 0.2,
     },
   },
 };
 
 export const fadeAnim = {
   hidden: { opacity: 0 },
-  show: { opacity: 1, transition: { ease: "easeOut", duration: 0.75 } },
+  show: { opacity: 1, transition: { ease: "easeOut", duration: 1.5 } },
+};
+
+export const hamburgerAnim = {
+  hidden: { x: 200, opacity: 0 },
+  show: { x: 0, opacity: 1, transition: { ease: "easeOut", duration: 0.75 } },
+  exit: {
+    rotate: 180,
+    transition: {
+      duration: 1,
+    },
+  },
 };
 
 export const imgHomePageAnim = {
@@ -46,6 +57,28 @@ export const imgWorkAnim = {
     bottom: "-100%",
     opacity: 0,
     scale: 3,
+  },
+  show: {
+    bottom: "0%",
+    opacity: 1,
+    scale: 1,
+    transition: {
+      duration: 0.75,
+      ease: "easeOut",
+    },
+  },
+  exit: {
+    scale: 1.1,
+    transition: {
+      duration: 1,
+    },
+  },
+};
+export const imgAboutAnim = {
+  hidden: {
+    bottom: "20%",
+    opacity: 0,
+    scale: 1.5,
   },
   show: {
     bottom: "0%",
@@ -135,6 +168,38 @@ export const sliderAnim = {
     transition: {
       duration: 0.75,
       ease: "easeOut",
+    },
+  },
+};
+
+//About Page
+
+export const sunLightFrontAnim = {
+  hidden: { top: "70%", right: "0%", opacity: 0 },
+  show: {
+    top: "25%",
+    right: "30%",
+    opacity: 1,
+    transition: {
+      duration: 3,
+    },
+  },
+  exit: {
+    scale: 50,
+
+    transition: {
+      duration: 1,
+    },
+  },
+};
+export const sunLightBackAnim = {
+  hidden: { top: "70%", right: "0%", opacity: 0 },
+  show: {
+    top: "25.5%",
+    right: "29.5%",
+    opacity: 1,
+    transition: {
+      duration: 2.9,
     },
   },
 };

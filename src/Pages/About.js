@@ -6,7 +6,12 @@ import styled from "styled-components";
 
 import moutainDayImg from "../images/fond_jour_crop.png";
 
-import { homepageAnim, imgWorkAnim, moonAnim, sliderAnim } from "../animation";
+import {
+  homepageAnim,
+  imgAboutAnim,
+  sunLightFrontAnim,
+  sunLightBackAnim,
+} from "../animation";
 import { motion } from "framer-motion";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -50,7 +55,19 @@ const About = ({ navStatus, setNavStatus, offsetX, offsetY }) => {
       <Hamburger navStatus={navStatus} setNavStatus={setNavStatus} />
 
       <TopContainer>
-        <BgImg variants={imgWorkAnim} src={moutainDayImg} alt="moutains" />
+        <CircleFront
+          style={{
+            transform: `translate( ${-offsetX * 5}px, ${-offsetY * 5}px)`,
+          }}
+          variants={sunLightFrontAnim}
+        />
+        <CircleBack
+          style={{
+            transform: `translate( ${-offsetX * 5}px, ${-offsetY * 5}px)`,
+          }}
+          variants={sunLightBackAnim}
+        />
+        <BgImg variants={imgAboutAnim} src={moutainDayImg} alt="moutains" />
       </TopContainer>
       <BottomContainer>
         <FirstSection>
@@ -249,6 +266,34 @@ const AboutStyled = styled(motion.div)`
   min-height: 200vh;
 `;
 
+const BgImg = styled(motion.img)`
+  position: absolute;
+  left: 0%;
+  bottom: 0%;
+  width: 100%;
+  pointer-events: none;
+  z-index: 20;
+  user-select: none;
+`;
+
+const CircleFront = styled(motion.div)`
+  position: absolute;
+  width: 10rem;
+  height: 10rem;
+  border-radius: 50%;
+  background: #ebe4d3;
+  z-index: -10;
+`;
+
+const CircleBack = styled(motion.div)`
+  position: absolute;
+  width: 10rem;
+  height: 10rem;
+  border-radius: 50%;
+  background: #dbd5c7;
+  z-index: -11;
+`;
+
 const TopContainer = styled.div`
   width: 100%;
   min-height: 50vh;
@@ -261,6 +306,7 @@ const BottomContainer = styled.div`
   height: 150vh;
   /* background: #091219; */
   background: white;
+  z-index: 20;
 `;
 const FirstSection = styled.div`
   width: 100%;
@@ -268,6 +314,7 @@ const FirstSection = styled.div`
   background: #091219;
   border-bottom: 5px solid white;
   display: flex;
+  z-index: 50;
 `;
 const SecondSection = styled.div`
   width: 100%;
@@ -489,15 +536,6 @@ const Skill = styled.div`
   p {
     padding-left: 2rem;
   }
-`;
-
-const BgImg = styled(motion.img)`
-  position: absolute;
-  left: 0%;
-  bottom: 50%;
-  width: 100%;
-  pointer-events: none;
-  z-index: 20;
 `;
 
 export default About;

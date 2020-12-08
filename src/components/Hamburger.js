@@ -1,9 +1,12 @@
 //Styled Components
 import styled from "styled-components";
+import { motion } from "framer-motion";
+import { hamburgerAnim } from "../animation";
 
 const Hamburger = ({ navStatus, setNavStatus }) => {
   return (
     <HamburgerStyled
+      variants={hamburgerAnim}
       open={navStatus ? true : false}
       onClick={() => setNavStatus(!navStatus)}
     >
@@ -14,7 +17,7 @@ const Hamburger = ({ navStatus, setNavStatus }) => {
   );
 };
 
-const HamburgerStyled = styled.div`
+const HamburgerStyled = styled(motion.div)`
   position: absolute;
 
   top: 5rem;
@@ -22,7 +25,7 @@ const HamburgerStyled = styled.div`
   cursor: pointer;
   z-index: 100;
 
-  transform-origin: 0px;
+  transform-origin: center;
 
   div {
     :first-child {

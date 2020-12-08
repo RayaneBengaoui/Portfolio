@@ -20,7 +20,7 @@ import Nav from "../components/Nav";
 import Hamburger from "../components/Hamburger";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faChevronUp, faChevronDown } from "@fortawesome/free-solid-svg-icons";
+import { faLinkedin, faGithubSquare } from "@fortawesome/free-brands-svg-icons";
 
 const Homepage = ({ navStatus, setNavStatus, offsetX, offsetY }) => {
   return (
@@ -35,7 +35,12 @@ const Homepage = ({ navStatus, setNavStatus, offsetX, offsetY }) => {
         open={navStatus ? "translateX(0%)" : "translateX(-100%)"}
       />
       <Hamburger navStatus={navStatus} setNavStatus={setNavStatus} />
-      <MoutainBg variants={imgHomePageAnim} src={moutainImg} alt="" />
+      <MoutainBg
+        rel="preload"
+        variants={imgHomePageAnim}
+        src={moutainImg}
+        alt=""
+      />
       <Layout>
         <CircleFront
           style={{
@@ -61,6 +66,28 @@ const Homepage = ({ navStatus, setNavStatus, offsetX, offsetY }) => {
             <motion.h2 variants={titleAnim}>
               Front-end / Software engineer
             </motion.h2>
+          </Hide>
+          <Hide>
+            <motion.div className="links" variants={titleAnim}>
+              <motion.a
+                target="_blank"
+                rel="noreferrer"
+                href="https://www.linkedin.com/in/rayane-bengaoui/"
+              >
+                <FontAwesomeIcon size="5x" color="white" icon={faLinkedin} />
+              </motion.a>
+              <motion.a
+                target="_blank"
+                rel="noreferrer"
+                href="https://github.com/RayaneBengaoui"
+              >
+                <FontAwesomeIcon
+                  size="5x"
+                  color="white"
+                  icon={faGithubSquare}
+                />
+              </motion.a>
+            </motion.div>
           </Hide>
           <ButtonStyled variants={fadeAnim}>Discover my work</ButtonStyled>
         </Container>
@@ -107,6 +134,15 @@ const Container = styled.div`
   justify-content: flex-end;
   transition: all 0.5s ease-in-out;
   margin-left: ${(props) => props.navOpen};
+
+  .links {
+    margin-top: 2rem;
+  }
+
+  .links > * + * {
+    margin-left: 3rem;
+    margin-top: 5rem;
+  }
 `;
 
 const ButtonStyled = styled(motion.button)`

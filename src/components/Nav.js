@@ -85,7 +85,7 @@ const NavStyled = styled.div`
     width: 100%;
     height: 100vh;
     h3 {
-      font-size: 5rem;
+      font-size: 4rem;
     }
   }
 
@@ -115,7 +115,7 @@ const Section = styled.div`
       transform: ${(props) => props.rotate};
       width: 50%;
       @media (max-width: 1050px) {
-        width: 25%;
+        width: 16%;
       }
     }
     .cover {
@@ -138,7 +138,7 @@ const SectionImage = styled.img`
   width: 60%;
   transition: all 0.5s ease-out;
   @media (max-width: 1050px) {
-    width: 20rem;
+    width: 18%;
   }
 `;
 

@@ -1,5 +1,9 @@
 import project_1 from "../images/project_1.png";
 import project_2 from "../images/music_app_project.png";
+import projectCapture from "../images/projectCapture.png";
+import projectPhone from "../images/projectPhone.png";
+import projectFleuriste from "../images/projectFleuriste.png";
+
 //Styled Components
 import styled from "styled-components";
 
@@ -66,8 +70,8 @@ const Slider = ({ setworkFocus, projectIndex, setProjectIndex }) => {
 
         {/* <SlideContainer  */}
         <SliderImg
-          setworkFocus={setworkFocus}
           src={project_2}
+          setworkFocus={setworkFocus}
           setProjectIndex={setProjectIndex}
           projectNumber={0}
         />
@@ -77,9 +81,24 @@ const Slider = ({ setworkFocus, projectIndex, setProjectIndex }) => {
           setProjectIndex={setProjectIndex}
           projectNumber={1}
         />
-        <SliderImg src={project_1} className="no-id" />
-        <SliderImg src={project_2} className="no-id" />
-        <SliderImg src={project_1} className="firstclone" />
+        <SliderImg
+          src={projectCapture}
+          setworkFocus={setworkFocus}
+          setProjectIndex={setProjectIndex}
+          projectNumber={2}
+        />
+        <SliderImg
+          src={projectPhone}
+          setworkFocus={setworkFocus}
+          setProjectIndex={setProjectIndex}
+          projectNumber={3}
+        />
+        <SliderImg
+          src={projectFleuriste}
+          setworkFocus={setworkFocus}
+          setProjectIndex={setProjectIndex}
+          projectNumber={4}
+        />
         {/* </SlideContainer> */}
       </SliderStyled>
     </SliderComp>

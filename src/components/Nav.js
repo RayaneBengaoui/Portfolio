@@ -81,9 +81,11 @@ const NavStyled = styled.div`
   padding-left: 0.5rem;
   padding-right: 0.5rem;
   z-index: 30;
+
   @media (max-width: 1050px) {
     width: 100%;
     height: 100vh;
+
     h3 {
       font-size: 4rem;
     }

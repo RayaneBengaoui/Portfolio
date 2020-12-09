@@ -17,22 +17,35 @@ const WorkDetail = ({ project, setworkFocus }) => {
           <ProjectLinks>
             <Github>
               <a target="_blank" rel="noreferrer" href={project.github_url}>
-                <FontAwesomeIcon
+                <FontIcon
+                  className="font-icon"
                   size="5x"
                   color="white"
                   icon={faGithubSquare}
+                  hover={project.color}
                 />
                 <p>Github</p>
               </a>
             </Github>
             <LiveSite>
               <a target="_blank" rel="noreferrer" href={project.livesite_url}>
-                <FontAwesomeIcon size="5x" color="white" icon={faGlobe} />
+                <FontIcon
+                  className="font-icon"
+                  size="5x"
+                  color="white"
+                  hover={project.color}
+                  icon={faGlobe}
+                />
                 <p>Live site</p>
               </a>
             </LiveSite>
           </ProjectLinks>
-          <ButtonStyled onClick={() => setworkFocus(false)}>Back</ButtonStyled>
+          <ButtonStyled
+            fade={project.color}
+            onClick={() => setworkFocus(false)}
+          >
+            Back
+          </ButtonStyled>
         </Links>
         <ProjectDescription>
           <Description>{project.description}</Description>
@@ -73,6 +86,10 @@ const LeftContainer = styled.div`
   @media (max-width: 1550px) {
     width: 100%;
     height: 50%;
+    margin-bottom: 2rem;
+    img {
+      margin-top: 1rem;
+    }
   }
 
   img {
@@ -89,6 +106,14 @@ const RightContainer = styled.div`
   @media (max-width: 1550px) {
     width: 100%;
     height: 50%;
+  }
+`;
+
+const FontIcon = styled(FontAwesomeIcon)`
+  transition: all 0.5s ease;
+
+  &:hover {
+    color: ${(props) => props.hover};
   }
 `;
 
@@ -131,7 +156,8 @@ const ButtonStyled = styled.button`
   cursor: pointer;
   transition: all 0.5s ease;
   &:hover {
-    background-color: #206a65;
+    /* background-color: #696969; */
+    background: ${(props) => props.fade};
     color: white;
   }
 `;
@@ -144,5 +170,8 @@ const Description = styled.div`
   font-size: 2rem;
   color: white;
   padding-top: 8rem;
+  font-weight: 300;
+  line-height: 2.8rem;
+  letter-spacing: 0.15rem;
 `;
 export default WorkDetail;

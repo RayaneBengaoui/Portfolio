@@ -18,6 +18,8 @@ import { projectData } from "../projectData";
 //Layout Styles
 import { Hide } from "../Layout";
 
+import { AnimatePresence } from "framer-motion";
+
 const Work = ({ navStatus, setNavStatus, offsetX, offsetY }) => {
   const [workFocus, setworkFocus] = useState(false);
   const [projects, setProjects] = useState(projectData);
@@ -36,12 +38,14 @@ const Work = ({ navStatus, setNavStatus, offsetX, offsetY }) => {
       />
       <Hamburger navStatus={navStatus} setNavStatus={setNavStatus} />
       <ImgBg variants={imgWorkAnim} src={moutainNightImg} alt="" />
-      {workFocus && (
-        <WorkDetail
-          setworkFocus={setworkFocus}
-          project={projects[projectIndex]}
-        />
-      )}
+      <AnimatePresence>
+        {workFocus && (
+          <WorkDetail
+            setworkFocus={setworkFocus}
+            project={projects[projectIndex]}
+          />
+        )}
+      </AnimatePresence>
       <Moon
         variants={moonAnim}
         src={moon}

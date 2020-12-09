@@ -5,9 +5,17 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGithubSquare } from "@fortawesome/free-brands-svg-icons";
 import { faGlobe } from "@fortawesome/free-solid-svg-icons";
 
+import { motion } from "framer-motion";
+import { workdetailAnim } from "../animation";
+
 const WorkDetail = ({ project, setworkFocus }) => {
   return (
-    <WorkDetailStyled>
+    <WorkDetailStyled
+      variants={workdetailAnim}
+      initial="hidden"
+      animate="show"
+      exit="exit"
+    >
       <LeftContainer>
         <h5>{project.title}</h5>
         <img src={project.img} alt="project" />
@@ -55,7 +63,7 @@ const WorkDetail = ({ project, setworkFocus }) => {
   );
 };
 
-const WorkDetailStyled = styled.div`
+const WorkDetailStyled = styled(motion.div)`
   position: absolute;
   /* bottom: 0; */
   width: 100%;

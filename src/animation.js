@@ -47,6 +47,15 @@ export const fadeAnim = {
   show: { opacity: 1, transition: { ease: "easeOut", duration: 1.5 } },
 };
 
+export const workdetailAnim = {
+  hidden: { x: "100%" },
+  show: { x: 0, transition: { duration: 1 } },
+  exit: {
+    x: "-100%",
+    transition: { duration: 1 },
+  },
+};
+
 export const hamburgerAnim = {
   hidden: { x: 200, opacity: 0 },
   show: { x: 0, opacity: 1, transition: { ease: "easeOut", duration: 0.75 } },

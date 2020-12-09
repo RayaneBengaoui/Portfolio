@@ -7,7 +7,7 @@ import styled from "styled-components";
 import moutainDayImg from "../images/fond_jour_crop.png";
 
 import {
-  homepageAnim,
+  aboutpageAnim,
   imgAboutAnim,
   sunLightFrontAnim,
   sunLightBackAnim,
@@ -43,7 +43,7 @@ import officeIcon from "../images/office_icon.png";
 const About = ({ navStatus, setNavStatus, offsetX, offsetY }) => {
   return (
     <AboutStyled
-      variants={homepageAnim}
+      variants={aboutpageAnim}
       initial="hidden"
       animate="show"
       exit="exit"

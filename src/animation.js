@@ -1,5 +1,3 @@
-import { Redirect } from "react-router-dom";
-
 //HOMEPAGE ANIMATIONS
 export const homepageAnim = {
   hidden: {
@@ -14,10 +12,32 @@ export const homepageAnim = {
       staggerChildren: 0.2,
     },
   },
-  exit: {
-    opacity: 0,
+};
+export const aboutpageAnim = {
+  hidden: {
+    y: "50%",
+  },
+  show: {
+    y: 0,
     transition: {
       duration: 1,
+      // when: "beforeChildren",
+      staggerChildren: 0.4,
+    },
+  },
+};
+
+export const workpageAnim = {
+  hidden: {
+    y: "-100%",
+  },
+  show: {
+    y: 0,
+
+    transition: {
+      duration: 1,
+      // when: "beforeChildren",
+      staggerChildren: 0.4,
     },
   },
 };
@@ -54,7 +74,7 @@ export const imgHomePageAnim = {
     },
   },
   exit: {
-    scale: 1.1,
+    scale: 3,
     transition: {
       duration: 1,
     },
@@ -71,7 +91,7 @@ export const imgWorkAnim = {
     opacity: 1,
     scale: 1,
     transition: {
-      duration: 0.75,
+      duration: 1,
       ease: "easeOut",
     },
   },
@@ -86,19 +106,20 @@ export const imgAboutAnim = {
   hidden: {
     bottom: "20%",
     opacity: 0,
-    scale: 1.5,
+    scale: 1.3,
   },
   show: {
-    bottom: "0%",
+    bottom: "-0%",
+    // left: "-0.3%",
     opacity: 1,
-    scale: 1,
+    scale: 1.02,
     transition: {
-      duration: 0.75,
+      duration: 0.5,
       ease: "easeOut",
     },
   },
   exit: {
-    scale: 1.1,
+    scale: 1.03,
     transition: {
       duration: 1,
     },
@@ -137,7 +158,7 @@ export const sunFrontAnim = {
     },
   },
   exit: {
-    scale: 50,
+    scale: 1.5,
 
     transition: {
       duration: 1,
@@ -154,6 +175,13 @@ export const sunBackAnim = {
       duration: 3.9,
     },
   },
+  exit: {
+    scale: 1.5,
+
+    transition: {
+      duration: 1,
+    },
+  },
 };
 
 //WORKPAGE ANIMATIONS
@@ -165,6 +193,13 @@ export const moonAnim = {
     opacity: 1,
     transition: {
       duration: 4,
+    },
+  },
+  exit: {
+    scale: 1.4,
+
+    transition: {
+      duration: 1,
     },
   },
 };
@@ -193,7 +228,7 @@ export const sunLightFrontAnim = {
     },
   },
   exit: {
-    scale: 50,
+    scale: 1.5,
 
     transition: {
       duration: 1,
@@ -208,6 +243,13 @@ export const sunLightBackAnim = {
     opacity: 1,
     transition: {
       duration: 2.9,
+    },
+  },
+  exit: {
+    scale: 1.5,
+
+    transition: {
+      duration: 1,
     },
   },
 };

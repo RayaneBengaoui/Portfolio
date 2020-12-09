@@ -74,6 +74,7 @@ function App() {
 
 const AppStyled = styled.div`
   overflow: hidden;
+  background-color: black;
 `;
 
 export default App;

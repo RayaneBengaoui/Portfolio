@@ -1,4 +1,4 @@
-import { homepageAnim, imgWorkAnim, moonAnim, sliderAnim } from "../animation";
+import { workpageAnim, imgWorkAnim, moonAnim, sliderAnim } from "../animation";
 import { motion } from "framer-motion";
 import styled from "styled-components";
 //Images
@@ -25,7 +25,7 @@ const Work = ({ navStatus, setNavStatus, offsetX, offsetY }) => {
 
   return (
     <WorkStyled
-      variants={homepageAnim}
+      variants={workpageAnim}
       initial="hidden"
       animate="show"
       exit="exit"

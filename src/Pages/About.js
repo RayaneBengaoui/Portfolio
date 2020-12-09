@@ -303,44 +303,44 @@ const TopContainer = styled.div`
 `;
 const BottomContainer = styled.div`
   width: 100%;
-  height: 150vh;
+  min-height: 150vh;
   /* background: #091219; */
   background: white;
   z-index: 20;
   @media (max-width: 1150px) {
-    height: 265vh;
+    min-height: 175vh;
   }
 `;
 const FirstSection = styled.div`
   width: 100%;
-  height: 50vh;
+  min-height: 50vh;
   background: #091219;
   border-bottom: 5px solid white;
   display: flex;
   z-index: 50;
   @media (max-width: 1150px) {
     flex-direction: column;
-    height: 75vh;
+    min-height: 50vh;
   }
 `;
 const SecondSection = styled.div`
   width: 100%;
-  height: 50vh;
+  min-height: 50vh;
   background: #091219;
   display: flex;
   @media (max-width: 1150px) {
     flex-direction: column;
-    height: 75vh;
+    min-height: 50vh;
   }
 `;
 const ThirdSection = styled.div`
   width: 100%;
-  height: 50vh;
+  min-height: 50vh;
   background: white;
   display: flex;
   @media (max-width: 1150px) {
     flex-direction: column;
-    height: 115vh;
+    min-height: 75vh;
   }
 `;
 

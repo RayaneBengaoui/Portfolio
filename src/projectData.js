@@ -4,6 +4,7 @@ import roomProject from "./images/project_1.png";
 import captureProject from "./images/projectCapture.png";
 import phoneProject from "./images/projectPhone.png";
 import fleuristeProject from "./images/projectFleuriste.png";
+import photonProject from "./images/projectPhoton.png";
 
 export const projectData = () => {
   return [
@@ -30,35 +31,40 @@ export const projectData = () => {
     {
       title: "Capture",
       img: captureProject,
-      github_url:
-        "https://github.com/RayaneBengaoui/FM_challenge10_room_homepage",
-      livesite_url:
-        "https://rayanebengaoui.github.io/FM_challenge10_room_homepage/",
+      github_url: "https://github.com/RayaneBengaoui/Capture_website",
+      livesite_url: "https://rayanebengaoui.github.io/Capture_website/",
       description:
-        "This is a website 222222 geronreogre fezrezferferferrr This is a website geronreogre fezrezferferferrr This is a website geronreogre fezrezferferferrr This is a website geronreogre fezrezferferferrr This is a website geronreogre fezrezferferferrr",
+        "Capture is a website built with React. I discovered how to use React Router to link my different pages within a Single Page Application. Also, to animate the website I used Framer-motion to handle animations which is very convenient associated with the useLocation Hook to detect wether we enter or exit a component. Lastly, rather than using SASS I used Styled-Components which allows to directly write CSS inside JS files and thus reduces the amount of files the project contains.",
       color: "#23D997",
     },
     {
       title: "CSS Phone",
       img: phoneProject,
       github_url:
-        "https://github.com/RayaneBengaoui/FM_challenge10_room_homepage",
+        "https://github.com/RayaneBengaoui/FM_challenge7_chat_app_illustration",
       livesite_url:
-        "https://rayanebengaoui.github.io/FM_challenge10_room_homepage/",
+        "https://rayanebengaoui.github.io/FM_challenge7_chat_app_illustration/",
       description:
-        "This is a website 222222 geronreogre fezrezferferferrr This is a website geronreogre fezrezferferferrr This is a website geronreogre fezrezferferferrr This is a website geronreogre fezrezferferferrr This is a website geronreogre fezrezferferferrr",
+        "Challenge where the goal was to realize the phone illustration using only CSS. So a specific attention to details was required.",
       color: "#8A38FF",
     },
     {
       title: "Florist Website",
       img: fleuristeProject,
-      github_url:
-        "https://github.com/RayaneBengaoui/FM_challenge10_room_homepage",
-      livesite_url:
-        "https://rayanebengaoui.github.io/FM_challenge10_room_homepage/",
+      github_url: "https://github.com/RayaneBengaoui/FloristPage",
+      livesite_url: "https://site-fleuriste.netlify.app/",
       description:
-        "This is a website 222222 geronreogre fezrezferferferrr This is a website geronreogre fezrezferferferrr This is a website geronreogre fezrezferferferrr This is a website geronreogre fezrezferferferrr This is a website geronreogre fezrezferferferrr",
+        "Basic HTML/CSS Website splited into differents sections. I learned how to animate SVG images to add some depth to the design.",
       color: "#7C914A",
+    },
+    {
+      title: "Photon",
+      img: photonProject,
+      github_url: "https://github.com/RayaneBengaoui/Photon",
+      livesite_url: "https://rayanebengaoui.github.io/Photon/",
+      description:
+        "Photon is a project using the API from Pexels, a website that proposes copyright free images from worldwide creators. Thus I learned how to make requests, reading an API documentation and use async/await to make asynchronous calls.",
+      color: "#915003",
     },
   ];
 };

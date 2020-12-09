@@ -3,6 +3,7 @@ import project_2 from "../images/music_app_project.png";
 import projectCapture from "../images/projectCapture.png";
 import projectPhone from "../images/projectPhone.png";
 import projectFleuriste from "../images/projectFleuriste.png";
+import projectPhoton from "../images/projectPhoton.png";
 
 //Styled Components
 import styled from "styled-components";
@@ -37,8 +38,8 @@ const Slider = ({ setworkFocus, projectIndex, setProjectIndex }) => {
     if (counter === -1) {
       setCounter(0);
     }
-    if (counter === 5) {
-      setCounter(4);
+    if (counter === 6) {
+      setCounter(5);
     }
     sliderStyledRef.current.style.transform = `translateY(${
       counter * translate
@@ -98,6 +99,12 @@ const Slider = ({ setworkFocus, projectIndex, setProjectIndex }) => {
           setworkFocus={setworkFocus}
           setProjectIndex={setProjectIndex}
           projectNumber={4}
+        />
+        <SliderImg
+          src={projectPhoton}
+          setworkFocus={setworkFocus}
+          setProjectIndex={setProjectIndex}
+          projectNumber={5}
         />
         {/* </SlideContainer> */}
       </SliderStyled>

@@ -11,7 +11,7 @@ import Slider from "../components/Slider";
 import WorkDetail from "../components/WorkDetail";
 import Star from "../components/Star";
 // React
-import { useState, useEffect } from "react";
+import { useState } from "react";
 
 import { projectData } from "../projectData";
 
@@ -22,7 +22,7 @@ import { AnimatePresence } from "framer-motion";
 
 const Work = ({ navStatus, setNavStatus, offsetX, offsetY }) => {
   const [workFocus, setworkFocus] = useState(false);
-  const [projects, setProjects] = useState(projectData);
+  const [projects] = useState(projectData);
   const [projectIndex, setProjectIndex] = useState(null);
 
   return (

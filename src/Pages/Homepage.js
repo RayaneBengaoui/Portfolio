@@ -217,16 +217,16 @@ const Container = styled.div`
 
 const AnimateLink = styled(motion.div)``;
 
-const ButtonStyled = styled(motion.button)`
-  align-self: flex-start;
-  background: #f3b659;
-  margin-top: 2rem;
-  &:hover {
-    background: #d49f4e;
-    color: white;
-  }
-  user-select: none;
-`;
+// const ButtonStyled = styled(motion.button)`
+//   align-self: flex-start;
+//   background: #f3b659;
+//   margin-top: 2rem;
+//   &:hover {
+//     background: #d49f4e;
+//     color: white;
+//   }
+//   user-select: none;
+// `;
 
 const CircleFront = styled(motion.div)`
   position: absolute;

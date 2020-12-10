@@ -111,7 +111,7 @@ const About = ({ navStatus, setNavStatus, offsetX, offsetY }) => {
                   I love languages and I make sure that each day I dedicate 1h
                   of my time to study it. I’m fluent in French and C1 in
                   English, I’m intermediate in Korean which I’d like to take a
-                  profecient test and I have notions in Spanish/German.
+                  proficiency test and I have notions in Spanish/German.
                 </p>
               </Passion>
               <Passion width="60%">

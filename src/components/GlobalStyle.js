@@ -18,6 +18,9 @@ html{
     @media (max-width : 650px){
         font-size : 40%
     }
+    @media (max-width : 374px){
+        font-size : 35%
+    }
 }
 
 h1{

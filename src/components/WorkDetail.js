@@ -67,7 +67,7 @@ const WorkDetailStyled = styled(motion.div)`
   position: absolute;
   /* bottom: 0; */
   width: 100%;
-  height: 75%;
+  min-height: 75%;
   background: black;
   z-index: 25;
   display: flex;
@@ -79,7 +79,7 @@ const WorkDetailStyled = styled(motion.div)`
     justify-content: space-between;
     align-items: center;
     padding: 2rem 3rem;
-    height: 90%;
+    min-height: 90%;
     bottom: 0;
   }
 `;
@@ -93,7 +93,7 @@ const LeftContainer = styled.div`
 
   @media (max-width: 1550px) {
     width: 100%;
-    height: 50%;
+    min-height: 50%;
     margin-bottom: 2rem;
     img {
       margin-top: 1rem;
@@ -113,7 +113,7 @@ const RightContainer = styled.div`
 
   @media (max-width: 1550px) {
     width: 100%;
-    height: 50%;
+    min-height: 50%;
   }
 `;
 

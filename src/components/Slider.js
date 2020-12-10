@@ -133,7 +133,7 @@ const SliderComp = styled(motion.div)`
 
     transform: scale(0);
     transition: transform ease-out 150ms, bottom ease-out 150ms;
-    z-index: 100;
+    z-index: 20;
   }
 
   &:hover::before {

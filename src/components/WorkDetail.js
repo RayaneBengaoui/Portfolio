@@ -8,7 +8,12 @@ import { faGlobe } from "@fortawesome/free-solid-svg-icons";
 import { motion } from "framer-motion";
 import { workdetailAnim } from "../animation";
 
-const WorkDetail = ({ project, setworkFocus }) => {
+const WorkDetail = ({
+  project,
+  setworkFocus,
+  projectIndex,
+  setProjectIndex,
+}) => {
   return (
     <WorkDetailStyled
       variants={workdetailAnim}
@@ -17,8 +22,20 @@ const WorkDetail = ({ project, setworkFocus }) => {
       exit="exit"
     >
       <LeftContainer>
-        <h5>{project.title}</h5>
-        <img src={project.img} alt="project" />
+        <div className="prev-button">
+          <button onClick={() => setProjectIndex(projectIndex - 1)}>
+            Previous
+          </button>
+        </div>
+        <div className="project-meta">
+          <h5>{project.title}</h5>
+          <img src={project.img} alt="project" />
+        </div>
+        <div className="next-button">
+          <button onClick={() => setProjectIndex(projectIndex + 1)}>
+            Next
+          </button>
+        </div>
       </LeftContainer>
       <RightContainer>
         <Links>
@@ -87,9 +104,52 @@ const WorkDetailStyled = styled(motion.div)`
 const LeftContainer = styled.div`
   width: 50%;
   display: flex;
-  flex-direction: column;
-  justify-content: space-evenly;
+  flex-direction: row;
+  justify-content: space-around;
   align-items: center;
+
+  .prev-button {
+    width: 15%;
+
+    display: flex;
+    justify-content: center;
+
+    button {
+      font-weight: bold;
+      font-size: 1.5rem;
+      font-family: inherit;
+      padding: 1.2rem 1.5rem;
+      border-radius: 200px;
+      border: none;
+      cursor: pointer;
+      transition: all 0.5s ease;
+      width: 9rem;
+    }
+  }
+  .next-button {
+    width: 15%;
+    display: flex;
+    justify-content: center;
+
+    button {
+      font-weight: bold;
+      font-size: 1.5rem;
+      font-family: inherit;
+      padding: 1.2rem 1.5rem;
+      border-radius: 200px;
+      border: none;
+      cursor: pointer;
+      transition: all 0.5s ease;
+      width: 9rem;
+    }
+  }
+
+  .project-meta {
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
 
   @media (max-width: 1550px) {
     width: 100%;
@@ -102,6 +162,7 @@ const LeftContainer = styled.div`
 
   img {
     max-width: 100%;
+    margin-top: 3rem;
   }
 `;
 

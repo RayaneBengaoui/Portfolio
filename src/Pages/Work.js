@@ -23,7 +23,7 @@ import { AnimatePresence } from "framer-motion";
 const Work = ({ navStatus, setNavStatus, offsetX, offsetY }) => {
   const [workFocus, setworkFocus] = useState(false);
   const [projects] = useState(projectData);
-  const [projectIndex, setProjectIndex] = useState(null);
+  const [projectIndex, setProjectIndex] = useState(0);
 
   return (
     <WorkStyled
@@ -43,6 +43,8 @@ const Work = ({ navStatus, setNavStatus, offsetX, offsetY }) => {
           <WorkDetail
             setworkFocus={setworkFocus}
             project={projects[projectIndex]}
+            projectIndex={projectIndex}
+            setProjectIndex={setProjectIndex}
           />
         )}
       </AnimatePresence>

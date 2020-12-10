@@ -51,13 +51,13 @@ const Slider = ({ setworkFocus, projectIndex, setProjectIndex }) => {
     <SliderComp variants={fadeAnim}>
       <ButtonContainer>
         <FontIcon
-          onClick={() => setCounter(counter + 1)}
+          onClick={() => setCounter(counter - 1)}
           size="4x"
           color="white"
           icon={faChevronUp}
         />
         <FontIcon
-          onClick={() => setCounter(counter - 1)}
+          onClick={() => setCounter(counter + 1)}
           size="4x"
           color="white"
           icon={faChevronDown}

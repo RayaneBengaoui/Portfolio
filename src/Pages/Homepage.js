@@ -180,16 +180,26 @@ const Container = styled.div`
     margin-top: 2rem;
     background-color: #f3b659;
     border-radius: 10px;
-    width: 20%;
-    height: 4rem;
+    width: 40%;
+    height: 6rem;
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 1.5rem;
+    font-size: 2.4rem;
     text-decoration: none;
     color: black;
     font-weight: 700;
     transition: all ease 0.5s;
+    animation: scale 2s ease-in-out infinite alternate;
+
+    @keyframes scale {
+      0% {
+        transform: scale(1);
+      }
+      100% {
+        transform: scale(1.05);
+      }
+    }
 
     @media (max-width: 1050px) {
       font-size: 3rem;

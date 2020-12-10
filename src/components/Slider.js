@@ -17,6 +17,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faChevronUp, faChevronDown } from "@fortawesome/free-solid-svg-icons";
 
 import { motion } from "framer-motion";
+import { fadeAnim } from "../animation";
 // import { fadeAnim } from "../animation";
 
 const Slider = ({ setworkFocus, projectIndex, setProjectIndex }) => {
@@ -47,7 +48,7 @@ const Slider = ({ setworkFocus, projectIndex, setProjectIndex }) => {
   }, [counter, translate]);
 
   return (
-    <SliderComp>
+    <SliderComp variants={fadeAnim}>
       <ButtonContainer>
         <FontIcon
           onClick={() => setCounter(counter + 1)}
@@ -117,6 +118,27 @@ const SliderComp = styled(motion.div)`
   justify-content: center;
   align-items: center;
   user-select: none;
+
+  &::before {
+    content: "Click on the project for details";
+    font-size: 1.8rem;
+    border-radius: 10px;
+    font-weight: 700;
+    padding: 0.9rem;
+    background: black;
+    color: white;
+    position: absolute;
+    top: 0;
+    left: 40%;
+
+    transform: scale(0);
+    transition: transform ease-out 150ms, bottom ease-out 150ms;
+    z-index: 100;
+  }
+
+  &:hover::before {
+    transform: scale(1);
+  }
 `;
 
 const SliderStyled = styled.div`
@@ -138,6 +160,17 @@ const FontIcon = styled(FontAwesomeIcon)`
   margin-right: 5rem;
   margin-bottom: 2rem;
   cursor: pointer;
+
+  animation: scaleUp 2s ease-in-out infinite alternate;
+
+  @keyframes scaleUp {
+    0% {
+      transform: scale(1);
+    }
+    100% {
+      transform: scale(1.3);
+    }
+  }
 `;
 
 // const SlideContainer = styled.div`

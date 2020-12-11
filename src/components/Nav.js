@@ -88,6 +88,10 @@ const NavStyled = styled.div`
 
     h3 {
       font-size: 4rem;
+
+      @media (max-height: 700px) and (max-width: 1050px) {
+        font-size: 1.5rem;
+      }
     }
   }
 
@@ -98,7 +102,7 @@ const NavStyled = styled.div`
 
 const Section = styled.div`
   width: 100%;
-  height: 33%;
+  height: 33.3%;
   /* margin-bottom: 0.5rem; */
   background: ${(props) => props.bg_color};
   display: flex;
@@ -117,7 +121,10 @@ const Section = styled.div`
       transform: ${(props) => props.rotate};
       width: 50%;
       @media (max-width: 1050px) {
-        width: 16%;
+        width: 13%;
+      }
+      @media (max-height: 700px) and (max-width: 1050px) {
+        width: 6%;
       }
     }
     .cover {
@@ -139,8 +146,12 @@ const Cover = styled.div`
 const SectionImage = styled.img`
   width: 60%;
   transition: all 0.5s ease-out;
+  object-fit: cover;
   @media (max-width: 1050px) {
-    width: 18%;
+    width: 15%;
+  }
+  @media (max-height: 700px) and (max-width: 1050px) {
+    width: 9%;
   }
 `;
 

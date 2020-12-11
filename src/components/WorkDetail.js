@@ -16,11 +16,15 @@ const WorkDetail = ({
 }) => {
   const switchProjectDetail = (direction) => {
     if (direction === "previous") {
-      if (projectIndex !== 0) {
+      if (projectIndex === 0) {
+        setProjectIndex(5);
+      } else {
         setProjectIndex(projectIndex - 1);
       }
     } else {
-      if (projectIndex !== 5) {
+      if (projectIndex === 5) {
+        setProjectIndex(0);
+      } else {
         setProjectIndex(projectIndex + 1);
       }
     }

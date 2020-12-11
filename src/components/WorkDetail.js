@@ -1,5 +1,5 @@
 //Styled Components
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGithubSquare } from "@fortawesome/free-brands-svg-icons";
@@ -14,6 +14,18 @@ const WorkDetail = ({
   projectIndex,
   setProjectIndex,
 }) => {
+  const switchProjectDetail = (direction) => {
+    if (direction === "previous") {
+      if (projectIndex !== 0) {
+        setProjectIndex(projectIndex - 1);
+      }
+    } else {
+      if (projectIndex !== 5) {
+        setProjectIndex(projectIndex + 1);
+      }
+    }
+  };
+
   return (
     <WorkDetailStyled
       variants={workdetailAnim}
@@ -23,7 +35,7 @@ const WorkDetail = ({
     >
       <LeftContainer>
         <div className="prev-button">
-          <button onClick={() => setProjectIndex(projectIndex - 1)}>
+          <button onClick={() => switchProjectDetail("previous")}>
             Previous
           </button>
         </div>
@@ -32,9 +44,7 @@ const WorkDetail = ({
           <img src={project.img} alt="project" />
         </div>
         <div className="next-button">
-          <button onClick={() => setProjectIndex(projectIndex + 1)}>
-            Next
-          </button>
+          <button onClick={() => switchProjectDetail("next")}>Next</button>
         </div>
       </LeftContainer>
       <RightContainer>

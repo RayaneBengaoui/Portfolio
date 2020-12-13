@@ -1,5 +1,5 @@
 //Styled Components
-import styled, { css } from "styled-components";
+import styled from "styled-components";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGithubSquare } from "@fortawesome/free-brands-svg-icons";

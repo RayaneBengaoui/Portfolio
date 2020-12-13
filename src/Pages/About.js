@@ -195,7 +195,7 @@ const About = ({ navStatus, setNavStatus, offsetX, offsetY }) => {
                         src={typeScriptIcon}
                         alt="typescript programmation"
                       />
-                      <p>TypeScript</p>
+                      <p>TypeScript (Learning)</p>
                     </Skill>
                   </SkillRightContainer>
                 </div>

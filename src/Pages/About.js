@@ -87,7 +87,7 @@ const About = ({ navStatus, setNavStatus, offsetX, offsetY }) => {
                 as Project Manager Assistant and Data Scientist which teached me
                 how to collaborate efficiently with my co-workers to deliver
                 VALUE to clients within a defined period of time. Now I’m
-                focusing on web development and specificaly on Front-end where
+                focusing on web development and specifically on Front-end where
                 I’m interested in Responsive Applications and Design.
               </h3>
             </TextHolder>
